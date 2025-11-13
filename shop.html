@@ -11,10 +11,25 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
-    /* ======== RESPONSIVE MENU BAR ADDED ======== */
+    /* ======== BASE NAV STYLES ======== */
+    
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 5%;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+    }
+
     .menu-toggle {
       display: none;
-      font-size: 26px;
+      font-size: 28px;
       cursor: pointer;
       color: #222;
       z-index: 1001;
@@ -23,7 +38,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 20px;
+      gap: 25px;
     }
 
     nav ul li a {
@@ -37,69 +52,7 @@
       color: #e63946;
     }
 
-    /* ======== RESPONSIVE ======== */
-    @media (max-width: 992px) {
-      nav ul {
-        position: fixed;
-        top: 80px;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 50px;
-        gap: 25px;
-        transition: all 0.4s ease;
-        box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-      }
-
-      nav ul.show {
-        right: 0;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      header {
-        padding: 15px 5%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .shop-section {
-        flex-direction: column;
-      }
-
-      .shop-filters {
-        width: 100%;
-        order: 2;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        order: 1;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .shop-hero h2 {
-        font-size: 1.8rem;
-      }
-
-      .shop-hero p {
-        font-size: 0.9rem;
-      }
-
-      .footer {
-        text-align: center;
-      }
-    }
-
-    /* ===== Dropdown Menu ===== */
+    /* ===== Dropdown ===== */
     .dropdown {
       position: relative;
     }
@@ -112,10 +65,10 @@
       background: white;
       list-style: none;
       padding: 10px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      z-index: 999;
       min-width: 160px;
+      z-index: 999;
     }
 
     .dropdown-menu li {
@@ -134,9 +87,115 @@
       background: rgba(233, 30, 99, 0.05);
     }
 
-    /* Show dropdown on hover (desktop) */
     .dropdown:hover .dropdown-menu {
       display: block;
+    }
+
+    /* ===== Hero Section ===== */
+    
+    .shop-hero {
+      background: url('./shop.webp') no-repeat center center/cover;
+      padding: 140px 20px 80px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .shop-hero h2 {
+      font-size: 2.5rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .shop-hero p {
+      font-size: 1.1rem;
+      color: #050505;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 992px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #fff;
+        transition: all 0.4s ease;
+        box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav.show {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: none;
+        padding: 0;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu li {
+        padding: 10px 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .shop-section {
+        flex-direction: column;
+        padding: 0 20px;
+      }
+
+      .shop-filters {
+        width: 100%;
+        order: 2;
+        margin-top: 20px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        order: 1;
+      }
+
+      .shop-hero h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .shop-hero h2 {
+        font-size: 1.6rem;
+      }
+
+      .shop-hero p {
+        font-size: 0.9rem;
+      }
+
+      .footer {
+        text-align: center;
+      }
+
+      nav {
+        width: 100%;
+      }
     }
 
     /* ===== Footer ===== */
@@ -147,7 +206,7 @@
       font-family: 'Poppins', sans-serif;
       position: relative;
     }
-  
+
     .footer-container {
       display: flex;
       flex-wrap: wrap;
@@ -166,7 +225,8 @@
       width: 200px;
       margin-bottom: 10px;
     }
-    .footer h3 {
+
+    .footer h4 {
       margin-bottom: 10px;
       color: #00e0b8;
     }
@@ -175,25 +235,31 @@
       list-style: none;
       padding: 0;
     }
+
     .footer-section ul li {
       margin: 8px 0;
     }
+
     .footer-section ul li a {
       text-decoration: none;
       color: #ddd;
       transition: color 0.3s;
     }
+
     .footer-section ul li a:hover {
       color: #00e0b8;
     }
 
-    .social-icons img {
-      width: 24px;
-      margin-right: 10px;
+    .social-icons i {
+      font-size: 20px;
+      color: white;
+      margin-right: 15px;
       transition: transform 0.3s;
     }
-    .social-icons img:hover {
+
+    .social-icons i:hover {
       transform: scale(1.2);
+      color: #00e0b8;
     }
 
     .footer-bottom {
@@ -205,63 +271,111 @@
       color: rgba(255,255,255,0.8);
     }
 
-    @media (max-width: 950px) {
-      .dropdown-menu {
-        position: static;
-        display: none;
-        box-shadow: none;
-        background: none;
-        padding: 0;
+    /* ===== Responsive Enhancements (Home2 + Mobile) ===== */
+    @media (max-width: 768px) {
+      header img {
+        width: 120px;
       }
 
-      .dropdown.open .dropdown-menu {
-        display: block;
+      .parallax-content h2 {
+        font-size: 2.2rem;
       }
 
-      .dropdown-menu li {
-        padding: 10px 0;
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .runway-item img {
+        width: 90%;
+      }
+
+      .category-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .card img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 15px 4%;
+      }
+
+      .parallax {
+        background-attachment: scroll;
+        min-height: 70vh;
+      }
+
+      .parallax-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .runway-item img {
+        width: 100%;
+      }
+
+      .footer {
+        padding: 30px 15px;
+      }
+
+      .card-body p {
+        font-size: 0.9rem;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container,
+      .best-sellers,
+      .runway-section {
+        padding: 120px 8%;
+      }
+
+      .parallax-content h2 {
+        font-size: 3.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-<header class="scrolled" style="position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 5%;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  z-index: 1000;">
-
+<header>
   <a href="index.html">
     <img src="./logo.webp" alt="Stackly Logo" style="width: 150px;">
   </a>
 
-  <!-- ✅ ADDED MENU TOGGLE BUTTON -->
+  <!-- ✅ MENU TOGGLE -->
   <span class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></span>
 
-  <nav>
-    <ul id="navLinks">
-      <ul id="menu">
-        <li class="dropdown">
-          <a href="./index.html">Home1 ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="./hp2.html">Home2</a></li>
-          </ul>
-        </li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+  <nav id="navMenu">
+    <ul id="menu">
+      <li class="dropdown">
+        <a href="./index.html">Home1 ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="./hp2.html">Home2</a></li>
+        </ul>
+      </li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="login.html">Login</a></li>
     </ul>
   </nav>
 </header>
@@ -272,11 +386,11 @@
   <p>Discover top categories, curated brands, and best-sellers of the season.</p>
 </section>
 
+<!-- SHOP SECTION -->
 <section class="shop-section">
   <aside class="shop-filters">
     <h3>Shop By Category</h3>
     <ul>
-      
       <li><input type="checkbox" id="kitchen"> <label for="kitchen">Kitchen</label></li>
       <li><input type="checkbox" id="cosmetics"> <label for="cosmetics">Cosmetics</label></li>
       <li><input type="checkbox" id="electronics"> <label for="electronics">Electronics</label></li>
@@ -287,38 +401,6 @@
       <li><input type="radio" name="rate" id="low"> <label for="low">Under ₹999</label></li>
       <li><input type="radio" name="rate" id="mid"> <label for="mid">₹1000 – ₹4999</label></li>
       <li><input type="radio" name="rate" id="high"> <label for="high">Above ₹5000</label></li>
-    </ul>
-
-    <h3>Shop By Size</h3>
-    <ul>
-      <li><input type="checkbox"> S</li>
-      <li><input type="checkbox"> M</li>
-      <li><input type="checkbox"> L</li>
-      <li><input type="checkbox"> XL</li>
-    </ul>
-
-    <h3>Shop By Color</h3>
-    <div class="color-options">
-      <span class="color-circle" style="background:#000"></span>
-      <span class="color-circle" style="background:#fff;border:1px solid #ccc;"></span>
-      <span class="color-circle" style="background:#c0a060"></span>
-      <span class="color-circle" style="background:#e63946"></span>
-      <span class="color-circle" style="background:#457b9d"></span>
-    </div>
-
-    <h3>Shop By Brand</h3>
-    <ul>
-      <li><input type="checkbox"> LuxeWear</li>
-      <li><input type="checkbox"> UrbanHome</li>
-      <li><input type="checkbox"> GlowUp</li>
-      <li><input type="checkbox"> SmartEdge</li>
-    </ul>
-
-    <h3>Customer Reviews</h3>
-    <ul>
-      <li><input type="radio" name="review"> ★★★★★</li>
-      <li><input type="radio" name="review"> ★★★★☆ & Up</li>
-      <li><input type="radio" name="review"> ★★★☆☆ & Up</li>
     </ul>
   </aside>
 
@@ -381,6 +463,7 @@
   </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-container">
 
@@ -432,16 +515,29 @@
       
         </footer>
 
-<!-- ✅ ADDED JS FOR MENU TOGGLE -->
+
+
+<!-- ✅ JS FOR MENU TOGGLE -->
 <script>
   const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.querySelector("nav ul");
+  const navMenu = document.getElementById("navMenu");
 
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-    menuToggle.innerHTML = navLinks.classList.contains("show")
+    navMenu.classList.toggle("show");
+    menuToggle.innerHTML = navMenu.classList.contains("show")
       ? '<i class="fas fa-times"></i>'
       : '<i class="fas fa-bars"></i>';
+  });
+
+  // For mobile dropdowns
+  const dropdowns = document.querySelectorAll(".dropdown > a");
+  dropdowns.forEach(link => {
+    link.addEventListener("click", e => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+        link.parentElement.classList.toggle("open");
+      }
+    });
   });
 </script>
 

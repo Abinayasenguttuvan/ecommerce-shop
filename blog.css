@@ -232,7 +232,7 @@
 
   /* Footer base */
 .footer {
-  background: url('./footer\ hp1.webp') no-repeat center center/cover;
+  background: url('./image1.webp') no-repeat center center/cover;
   /* background: rgb(53, 2, 82); */
     color: white;
     padding: 40px 20px 20px;
@@ -375,8 +375,6 @@
   justify-items: center;
 }
 
-
-
 /* ---------- Animated Flip Cards ---------- */
 .category-card {
   width: 270px;
@@ -487,4 +485,3 @@
 .category-card {
   animation: floatCard 6s ease-in-out infinite;
 }
-

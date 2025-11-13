@@ -74,17 +74,19 @@
       display: none;
       flex-direction: column;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      border-radius: 6px;
-      overflow: hidden;
-      min-width: 150px;
+      border-radius: 8px;
+      min-width: 160px;
+      z-index: 999;
+      /* overflow: hidden;
+      min-width: 150px; */
     }
 
     .dropdown:hover .dropdown-menu {
-      display: flex;
+      display: block;
     }
 
     .dropdown-menu li a {
-      padding: 10px 15px;
+      /* padding: 10px 15px; */
       display: block;
       color: #333;
     }
@@ -277,7 +279,7 @@
       }
 
       .parallax-content h2 {
-        font-size: 2.2rem;
+        font-size: 2 rem;
       }
 
       .cards {
@@ -317,7 +319,7 @@
       }
 
       .parallax-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .runway-item img {

@@ -3,412 +3,390 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stackly - Selling Page</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Selling Page</title>
 
 <style>
-/* ====== GLOBAL ====== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
+/* ------------------ GLOBAL ------------------ */
 body {
-  font-family: "Poppins", sans-serif;
-  background: #f7f7f7;
-  color: #222;
-  scroll-behavior: smooth;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
 }
 
-/* ====== HEADER / NAVBAR ====== */
+/* ------------------ HEADER ------------------ */
 header {
-  width: 100%;
-  background: #d6b77b;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  animation: fadeInDown 0.6s ease;
+    width: 100%;
+    background:#d6b77b;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    color: white;
+    animation: fadeInDown 0.6s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
+
 @keyframes fadeInDown {
-  from {opacity: 0; transform: translateY(-30px);}
-  to {opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(-30px);} 
+    to { opacity: 1; transform: translateY(0);} 
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-}
-.logo img {
-  width: 140px;
-}
-
-/* ====== NAV LINKS ====== */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  transition: all 0.3s ease;
-}
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-nav ul li a:hover {
-  color: #111;
-}
-
-/* ====== MENU BUTTON ====== */
-.menu-btn {
-  display: none;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ====== HERO SECTION ====== */
-.hero {
-  margin-top: 90px;
-  background: url('./selling.webp') center/cover no-repeat;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-  position: relative;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.45);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-.hero-content h1 {
-  font-size: 3rem;
-  letter-spacing: 1px;
-  animation: fadeUp 1s ease forwards;
-}
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 15px 0 30px;
-  animation: fadeUp 1.3s ease forwards;
-}
-.hero-content .pulse {
-  background: #fff;
-  color: #d6b77b;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: 600;
-}
-.hero-content .pulse:hover {
-  transform: scale(1.1);
-  background: #d6b77b;
-  color: #fff;
-}
-
- /* ===== Dropdown Menu ===== */
- .dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 999;
-  min-width: 160px;
-}
-
-.dropdown-menu li {
-  text-align: left;
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: #222;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-}
-
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 10px 0;
-  }
-}
-
-/* ====== MAIN CONTAINER ====== */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* ====== SELL CARD ====== */
-.sell-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin: 20px auto;
-  transition: 0.4s;
-  max-width: 600px;
-}
-.sell-card:hover {
-  transform: scale(1.03);
-}
-
-/* ====== SLIDER ====== */
-.slide-box {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  margin-top: 40px;
-  padding: 10px;
-}
-.slide-item {
-  flex: 0 0 250px;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  scroll-snap-align: start;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ====== UPLOAD SECTION ====== */
-.upload-section {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 40px 20px;
-  width: 90%;
-  margin: 40px auto;
-  text-align: center;
-}
-.upload-section h2 {
-  margin-bottom: 20px;
-}
-.upload-area {
-  border: 2px dashed #888;
-  padding: 40px;
-  border-radius: 12px;
-  background: #fafafa;
-  transition: 0.3s ease;
-}
-.upload-area:hover {
-  border-color: #d6b77b;
-  transform: scale(1.02);
-}
-
-/* ====== FOOTER ====== */
-.footer {
-  background: url('./hp2 footer.webp') no-repeat center/cover;
-  color: white;
-  padding: 50px 20px;
-}
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-.footer-section h4 {
-  margin-bottom: 10px;
-  color: #f3b200;
-}
-.footer-section ul {
-  list-style: none;
-}
-.footer-section ul li a {
-  color: #ddd;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.footer-section ul li a:hover {
-  color: #fff;
-}
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  padding-top: 10px;
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-/* ====== ANIMATIONS ====== */
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* ====== MEDIA QUERIES ====== */
-@media (max-width: 1024px) {
-  .hero-content h1 {
-    font-size: 2.4rem;
-  }
-  .container {
-    padding: 40px 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #333;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px 0;
-    display: none;
-  }
-  nav ul.active {
     display: flex;
-  }
-  .menu-btn {
-    display: block;
-  }
-  .hero {
-    height: 70vh;
-    padding: 0 20px;
-  }
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .slide-box {
-    gap: 10px;
-  }
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
+    justify-content: space-between;
+    padding: 0 40px;
+    align-items: center;
 }
 
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  nav {
-    padding: 10px 20px;
-  }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    padding: 0;
 }
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover { color: #000; }
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* ------------------ MOBILE MENU ------------------ */
+@media(max-width:768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    nav ul.active { display:flex; }
+
+    .menu-btn { display:block; color:white; }
+}
+
+/* ------------------ HERO SECTION ------------------ */
+
+.container {
+    padding-top: 140px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.sell-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align:center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: fadeUp 1s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px);} 
+    to { opacity: 1; transform: translateY(0);} 
+}
+
+/* ------------------ SCROLLING TEXT ------------------ */
+.scroll-text {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    animation: scrollLeft 10s linear infinite;
+    margin: 20px 0;
+}
+
+@keyframes scrollLeft {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* ------------------ FLIP BOX ------------------ */
+.flip-area {
+    perspective: 1000px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.flip-box {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: flipAnim 3s infinite alternate;
+}
+
+@keyframes flipAnim {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(180deg); }
+}
+
+.flip-box > div {
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    font-weight:bold;
+    backface-visibility:hidden;
+}
+
+.front { background:#7f693d; color:white; }
+.back  { background:#aaa; color:white; transform:rotateY(180deg); }
+
+/* ------------------ SLIDING BOX ------------------ */
+.slide-box {
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:20px;
+}
+
+.slide-item {
+    flex:0 0 220px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    animation:slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from { opacity:0; transform:translateX(40px);}
+    to { opacity:1; transform:translateX(0);}
+}
+
 </style>
 </head>
 
 <body>
-  <!-- HEADER -->
+
   <header>
     <nav>
       <div class="logo"><img src="./logo.webp" alt="Stackly Logo"></div>
+  
       <div class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+  
       <ul id="menuList">
-        <ul>
-              <ul id="menu">
-                <li class="dropdown">
-                  <a href="./hp2.html">Home2 ▾</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="./index.html">Home1</a></li>
-                    
-                  </ul>
-        <li><a href="hp2.html">Home2</a></li>
+  
+        <li class="dropdown">
+          <a href="./index.html">Home1 ▾</a>
+            <li><a href="hp2.html">Home 2</a></li>
+          
+        </li>
+  
         <li><a href="buying.html">Buy</a></li>
         <li><a href="selling.html">Sell</a></li>
-        <li><a href="product1.html">Product</a></li>
+        <li><a href="product2.html">Product</a></li>
         <li><a href="aboutus1.html">About</a></li>
         <li><a href="contact1.html">Contact</a></li>
         <li><a href="login1.html">Login</a></li>
         <li><a href="dashbored2.html">Dashboard</a></li>
+  
       </ul>
     </nav>
   </header>
+<div class="container">
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Start Selling Your Products Today</h1>
-      <p>Reach thousands of buyers and grow your online presence with Stackly.</p>
-      <a href="./product2.html">
-      <button class="pulse">Get Started</button></a>a
-    </div>
-  </section>
-
-  <!-- CONTENT -->
-  <div class="container">
-    <div class="sell-card">
-      <h2>Upload Your Product!</h2>
-      <p>Add product details, pricing, and images with ease.</p>
-    </div>
-
-    <div class="slide-box">
-      <div class="slide-item">📸 High-Quality Photos</div>
-      <div class="slide-item">💸 Competitive Pricing</div>
-      <div class="slide-item">🚚 Fast Delivery</div>
-      <div class="slide-item">📊 Sales Insights</div>
-    </div>
+  <div class="sell-card">
+    <h2>Upload Your Product</h2>
+    <p>Add product details, pricing, and images with animations.</p>
   </div>
 
-  <!-- UPLOAD SECTION -->
-  <section class="upload-section">
-    <h2>Upload Product Images</h2>
-    <div class="upload-area">
-      <p>Drag & Drop or Click to Upload</p>
-      <a href="./hp2 404.html">
-      <button class="pulse">Choose Files</button></a>
-    </div>
-  </section>
+  <div class="scroll-text">🔥 Sell your product faster with animations & tools! 🔥</div>
 
+  <div class="flip-area">
+      <div class="flip-box">
+          <div class="front">Quick Listing</div>
+          <div class="back">Fast Approval</div>
+      </div>
+  </div>
+
+  <h2 style="text-align:center">Featured Tools</h2>
+
+  <div class="slide-box">
+      <div class="slide-item">📸 High Quality Photos</div>
+      <div class="slide-item">💸 Competitive Pricing</div>
+      <div class="slide-item">🚚 Delivery Options</div>
+      <div class="slide-item">📊 Track Sales</div>
+  </div>
+
+</div>
+<!-- ------------------ UPLOAD SECTION ------------------ -->
+<style>
+  .upload-box {
+      max-width: 900px;
+      margin: 40px auto;
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 18px rgba(0,0,0,0.1);
+      animation: fadeUp 1s ease;
+  }
+  
+  .upload-area {
+      border: 2px dashed #888;
+      background: #fafafa;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: .3s;
+  }
+  
+  .upload-area:hover {
+      border-color: #d6b77b;
+      background: #fff;
+  }
+  
+  /* Image preview grid */
+  .preview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+  }
+  
+  .preview-box {
+      width: 130px;
+      height: 130px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+  }
+  
+  .preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  
+  .remove-btn {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+  }
+  
+  /* Product Form */
+  .product-form input,
+  .product-form textarea,
+  .product-form button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+  }
+  
+  .product-form button {
+      background: #d6b77b;
+      color: white;
+      cursor:pointer;
+      border:none;
+      font-size:18px;
+      transition:.3s;
+  }
+  
+  .product-form button:hover {
+      background:#b79b63;
+  }
+  
+  /* Responsive fix */
+  @media(max-width:550px) {
+      .preview-box { width: 100px; height: 100px; }
+  }
+  </style>
+  
+  <div class="upload-box">
+  
+      <h2 style="text-align:center;">Upload Product Images</h2>
+  
+      <!-- Drag & Drop -->
+      <div class="upload-area" id="uploadArea">
+          <p>📤 Drag & Drop or Click to Upload</p>
+          <input type="file" id="fileInput" accept="image/*" multiple style="display:none;">
+      </div>
+  
+      <!-- Image Preview -->
+      <div class="preview-grid" id="previewGrid"></div>
+  
+      <br><hr><br>
+  
+      <!-- Product Form -->
+      <h2 style="text-align:center;">Product Details</h2>
+  
+      <form class="product-form">
+          <input type="text" placeholder="Product Name" required>
+          <input type="number" placeholder="Price (₹)" required>
+          <textarea rows="4" placeholder="Product Description"></textarea>
+          <button type="submit">Publish Product</button>
+      </form>
+  
+  </div>
+  
+  
+  <!-- ------------------ FOOTER ------------------ -->
+  <style>
+  .footer {
+      background:#222;
+      color:white;
+      padding:40px 20px;
+      margin-top:40px;
+  }
+  
+  .footer-container {
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      flex-wrap:wrap;
+      gap:30px;
+  }
+  
+  .footer-section {
+      flex:1;
+      min-width:250px;
+  }
+  
+  .footer-section ul { list-style:none; padding:0; }
+  .footer-section ul li { margin-bottom:8px; }
+  .footer-section a { color:#bbb; text-decoration:none; }
+  
+  .footer-bottom {
+      text-align:center;
+      padding-top:20px;
+      margin-top:20px;
+      border-top:1px solid rgba(255,255,255,0.2);
+  }
+  
+  /* Mobile */
+  @media(max-width:700px){
+      .footer-container{ flex-direction:column; text-align:center; }
+  }
+  </style>
+  
   <footer class="footer">
     <div class="footer-container">
   
@@ -423,11 +401,12 @@ nav ul li a:hover {
       <div class="footer-section links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="hp2.html">Home</a></li>
           <li><a href="product2.html">product </a></li>
-          <li><a href="about.html">about</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="aboutus1.html">about</a></li>
+          <li><a href="buying.html">Buy</a></li>
+          <li><a href="selling.html">Sell</a></li>
+          <li><a href="contact1.html">Contact</a></li>
         </ul>
       </div>
   
@@ -459,23 +438,67 @@ nav ul li a:hover {
             </div>
         
           </footer>
-
+  
+  
+  <!-- ------------------ JAVASCRIPT ------------------ -->
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menuList = document.getElementById('menuList');
-    menuBtn.addEventListener('click', () => {
-      menuList.classList.toggle('active');
-    });
-
-    // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
+  
+  /* MOBILE MENU */
+  function toggleMenu(){
+      document.getElementById("menu").classList.toggle("active");
+  }
+  
+  /* ================= UPLOAD SYSTEM ================= */
+  const uploadArea = document.getElementById("uploadArea");
+  const fileInput   = document.getElementById("fileInput");
+  const previewGrid = document.getElementById("previewGrid");
+  
+  /* Click to upload */
+  uploadArea.addEventListener("click", () => fileInput.click());
+  
+  /* Handle file input */
+  fileInput.addEventListener("change", () => {
+      [...fileInput.files].forEach(file => previewImage(file));
   });
+  
+  /* Drag events */
+  uploadArea.addEventListener("dragover", e => {
+      e.preventDefault();
+      uploadArea.style.borderColor = "#d6b77b";
+  });
+  uploadArea.addEventListener("dragleave", () => {
+      uploadArea.style.borderColor = "#888";
+  });
+  uploadArea.addEventListener("drop", e => {
+      e.preventDefault();
+      uploadArea.style.borderColor = "#888";
+      [...e.dataTransfer.files].forEach(file => previewImage(file));
+  });
+  
+  /* Create preview box */
+  function previewImage(file){
+      let reader = new FileReader();
+  
+      reader.onload = () => {
+          let box = document.createElement("div");
+          box.classList.add("preview-box");
+  
+          box.innerHTML = `
+              <img src="${reader.result}">
+              <button class="remove-btn">×</button>
+          `;
+  
+          previewGrid.appendChild(box);
+  
+          /* Remove button */
+          box.querySelector(".remove-btn").onclick = () => box.remove();
+      };
+  
+      reader.readAsDataURL(file);
+  }
+  
   </script>
-</body>
-</html>
+  
+  </body>
+  </html>
+  

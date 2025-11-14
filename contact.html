@@ -400,7 +400,7 @@
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("navMenu");
 
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("link", () => {
       navMenu.classList.toggle("active");
       menuToggle.classList.toggle("active");
     });
@@ -410,14 +410,14 @@
   const menu = document.getElementById('menu');
   const dropdowns = document.querySelectorAll('.dropdown');
 
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('link', () => {
     menu.classList.toggle('active');
     toggle.classList.toggle('open');
   });
 
   // Handle dropdown toggle for mobile
   dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
+    drop.addEventListener('link', (e) => {
       if (window.innerWidth <= 950) {
         e.preventDefault();
         drop.classList.toggle('open');

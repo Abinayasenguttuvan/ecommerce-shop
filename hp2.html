@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Ecommerce Buying and Selling</title>
+
   <style>
     body {
       margin: 0;
@@ -12,100 +14,12 @@
       background: #f7f7f7;
     }
 
-    /* Dropdown Base */
-.dropdown {
-  position: relative;
-}
 
-.dropdown .drop-link {
-  cursor: pointer;
-}
-
-/* Desktop dropdown */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  min-width: 160px;
-  z-index: 999;
-}
-
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: #222;
-  text-decoration: none;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Mobile dropdown fix */
-@media (max-width: 900px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    background: none;
-    padding: 0;
-    box-shadow: none;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 12px 0;
-  }
-}
-
-    /* ---------- HEADER ---------- */
-    header {
-      width: 100%;
-      background: #d6b77b;
-      color: #fff;
-      padding: 15px 0;
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-      animation: fadeInDown 0.6s ease;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .logo img {
-      width: 150px;
-    }
-
-    /* ===== Footer ===== */
-    .footer {
-      background: url('./hp2 footer.webp') no-repeat center center/cover;
-      color: white;
+        /* ===== Footer ===== */
+        .footer {
+  background:url('./hp1\ footer.webp');
+    color: white;
+    padding: 40px 20px 20px;
     font-family: 'Poppins', sans-serif;
     position: relative;
   }
@@ -174,209 +88,76 @@
   }
   
 
-
-    nav ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #f3b200;
-    }
-
-    /* ---------- MENU BUTTON ---------- */
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      color: #fff;
-      cursor: pointer;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .menu-btn:hover {
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    /* ---------- MOBILE MENU ---------- */
-    @media (max-width: 900px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 0 20px;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: rgba(34, 34, 34, 0.98);
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        animation: slideDown 0.4s ease;
-      }
-
-      nav.active ul {
-        display: flex;
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
+        /* Search Bar */
+        .search-bar {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #444;
+            border-radius: 5px;
+            outline: none;
         }
-      }
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background:#222;
+                width: 100%;
+                padding: 20px;
+            }
+            nav.active ul {
+                display: flex;
+            }
+            .menu-btn {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+        .menu-btn { display: none; }
 
-      nav ul li {
-        margin: 12px 0;
-      }
 
-      nav ul li a {
-        font-size: 20px;
-      }
+  .container{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+  }
+  .grid{
+    background-color: whitesmoke;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+  }
+  .card{
+    background:rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 0 12px rgba(77,208,225,0.3);
+    animation:fadeInUp 1.2s ease;
+  }
+  @keyframes fadeInUp{
+    from{opacity:0;transform:translateY(40px)}
+    to{opacity:1;transform:translateY(0px)}
+  }
+  
 
-      .menu-btn {
-        display: block;
-      }
-    }
-
-    /* ---------- HERO SECTION ---------- */
-    .hero {
-      background: url('./hp2.webp') center/cover no-repeat;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      animation: fadeIn 1s ease;
-      margin-top: 100px;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .hero h1 {
-      font-size: 50px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero p {
-      font-size: 20px;
-    }
-
-    .shop-btn {
-      margin-top: 20px;
-      padding: 12px 30px;
-      border: none;
-      background: #f3b200;
-      color: #222;
-      cursor: pointer;
-      font-size: 18px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-
-    .shop-btn:hover {
-      transform: scale(1.1);
-    }
-
-    /* ---------- PRODUCT GRID ---------- */
-    .product-grid {
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .product-card {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeUp 0.8s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .product-card img {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    /* ---------- REVIEWS ---------- */
-    .reviews {
-      text-align: center;
-      font-size: 22px;
-      padding: 20px;
-      background-color: #7f693d;
-      color: white;
-    }
-
-    .review {
-      display: none;
-    }
-
-    .review.active {
-      display: block;
-      animation: fadeIn 1s;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: url('./hp2 footer.webp') no-repeat center center/cover;
+  /* Footer base */
+.footer {
+    background: url('./hp2\ footer.webp') no-repeat center center/cover;
+    /* background: rgb(53, 2, 82); */
       color: white;
       padding: 40px 20px 20px;
       font-family: 'Poppins', sans-serif;
+      position: relative;
     }
-
+    
+    /* Footer container layout */
     .footer-container {
       display: flex;
       flex-wrap: wrap;
@@ -385,200 +166,325 @@
       max-width: 1200px;
       margin: auto;
     }
-
+    
+    /* Footer sections */
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    /* Logo + About section */
+    .footer-logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    .footer h3 {
+      margin-bottom: 10px;
+      color: #00e0b8;
+    }
+    
+    /* Links section */
     .footer-section ul {
       list-style: none;
       padding: 0;
     }
-
     .footer-section ul li {
       margin: 8px 0;
     }
-
     .footer-section ul li a {
       text-decoration: none;
       color: #ddd;
       transition: color 0.3s;
     }
-
     .footer-section ul li a:hover {
       color: #00e0b8;
     }
-
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 15px;
-      margin-top: 20px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.8);
+    
+    /* Contact + social */
+    .social-icons img {
+      width: 24px;
+      margin-right: 10px;
+      transition: transform 0.3s;
+    }
+    .social-icons img:hover {
+      transform: scale(1.2);
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
+
+    /* ---------- HEADER ---------- */
+    header {
+      width: 100%;
+      background: #d6b77b;
+      color: #fff;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      width: 140px;
+    }
+
+    /* NAV MENU */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* HOVER COLOR */
+    nav ul li a:hover {
+      /* color: #f3b200; */
+    }
+
+    /* MENU BUTTON */
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* DROPDOWN */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 160px;
+      padding: 10px 0;
+      display: none;
+      list-style: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .dropdown-menu li {
+      padding: 8px 20px;
+    }
+
+    .dropdown-menu li a {
+      color: #222;
+      display: block;
+    }
+
+    /* SHOW ON HOVER (DESKTOP) */
+    @media (min-width: 901px) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* ---------- MOBILE MENU ---------- */
+    @media (max-width: 900px) {
+
+      .menu-btn {
+        display: block;
       }
 
-      .hero p {
-        font-size: 16px;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      footer .footer-container {
+      nav ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(34,34,34,0.95);
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+        background: black;
+        /* box-shadow: none; */
+        /* display: none; */
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: block;
       }
     }
 
-    @media (max-width: 480px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        height: 300px;
-      }
+    /* HERO */
+    .hero {
+      background: url('./hp2.webp') center/cover no-repeat;
+      height: 380px;
+      margin-top: 100px;
+      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
 
-    /* ===== Dropdown Menu ===== */
-.dropdown {
-  position: relative;
-}
+    /* PRODUCT GRID */
+    .product-grid {
+      margin: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+    }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 999;
-  min-width: 160px;
-}
+    .product-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
 
-.dropdown-menu li {
-  text-align: left;
-  padding: 8px 20px;
-}
+    /* REVIEWS */
+    .reviews {
+      text-align: center;
+      background: #7f693d;
+      color: white;
+      padding: 20px;
+    }
 
-.dropdown-menu li a {
-  color: #222;
-  text-decoration: none;
-  display: block;
-}
+    .review { display: none; }
+    .review.active { display: block; }
 
-.dropdown-menu li a:hover {
-  color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-}
-
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 10px 0;
-  }
-}
-
+    /* FOOTER */
+    footer {
+      background: url('./hp2 footer.webp') center/cover no-repeat;
+      padding: 40px 20px;
+      color: white;
+    }
   </style>
-</head>
 
+</head>
 <body>
+
+  <!-- ===========================
+        HEADER + MENU FIXED
+  ============================ -->
   <header>
     <nav id="navbar">
+
       <div class="logo">
-        <img src="./logo.webp" alt="Stackly Logo" />
+        <img src="./logo.webp" alt="logo">
       </div>
+
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
-      <ul>
-        
-            <ul id="menu">
-        
-              <!-- HOME 1 DROPDOWN -->
-              <li class="dropdown">
-                <a href="./hp2.html" class="drop-link">Home2 ▾</a>
-        
-                <ul class="dropdown-menu">
-                  <li><a href="./index.html"> Home1</a></li>
-                 
-                </ul>
-              </li>
-        
-              <!-- HOME 2 DIRECT LINK -->
-              
-        
-              <li><a href="buying.html">Buy</a></li>
-              <li><a href="selling.html">Sell</a></li>
-              <li><a href="product2.html">Product</a></li>
-              <li><a href="aboutus1.html">About</a></li>
-              <li><a href="contact1.html">Contact</a></li>
-              <li><a href="login1.html">Login</a></li>
-              <li><a href="dashbored2.html">Dashboard</a></li>
-        
-            </ul>
-          </nav>
-        </header>
-        
+
+      <ul id="menu">
+
+        <!-- DROPDOWN -->
+        <li class="dropdown">
+          <a href="hp2.html" class="drop-link">Home2 ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Home1</a></li>
+          </ul>
+        </li>
+
+        <li><a href="buying.html">Buy</a></li>
+        <li><a href="product2.html">Product</a></li>
+        <li><a href="aboutus1.html">Aboutus</a></li>
+        <li><a href="contact1.html">Contact</a></li>
+        <li><a href="login1.html">Login</a></li>
+        <li><a href="dashbored2.html">Dashboard</a></li>
+
+      </ul>
+
     </nav>
   </header>
 
+  <!-- HERO -->
   <div class="hero">
     <h1>Shop the Best Deals</h1>
     <p>Exclusive offers on top categories</p>
-    <a href="./hp2 404.html"><button class="shop-btn">Shop Now</button></a>
   </div>
 
+  <!-- PRODUCTS -->
   <div class="product-grid">
     <div class="product-card">
-      <img src="./hp2 floral.webp" alt="Product 1" />
-      <h3>Product 1</h3>
-      <p>$25.00</p>
+      <img src="./hp2 floral.webp" width="100%">
+      <h3>Product 1</h3><p>$25</p>
     </div>
+
     <div class="product-card">
-      <img src="./hp2 dress1.webp" alt="Product 2" />
-      <h3>Product 2</h3>
-      <p>$40.00</p>
+      <img src="./hp2 dress1.webp" width="100%">
+      <h3>Product 2</h3><p>$40</p>
     </div>
+
     <div class="product-card">
-      <img src="./shop dress1.webp" alt="Product 3" />
-      <h3>Product 3</h3>
-      <p>$15.00</p>
+      <img src="./shop dress1.webp" width="100%">
+      <h3>Product 3</h3><p>$15</p>
     </div>
+
     <div class="product-card">
-      <img src="./evening dress.webp" alt="Product 4" />
-      <h3>Product 4</h3>
-      <p>$55.00</p>
+      <img src="./evening dress.webp" width="100%">
+      <h3>Product 4</h3><p>$55</p>
     </div>
   </div>
 
+  <!-- REVIEWS -->
   <div class="reviews">
-    <div class="review active">“Amazing products and super fast delivery!” ⭐⭐⭐⭐⭐</div>
-    <div class="review">“Great service and quality!” ⭐⭐⭐⭐</div>
-    <div class="review">“I keep coming back to shop more!” ⭐⭐⭐⭐⭐</div>
+    <div class="review active">“Amazing products!” ⭐⭐⭐⭐⭐</div>
+    <div class="review">“Great service!” ⭐⭐⭐⭐</div>
+    <div class="review">“Will buy again!” ⭐⭐⭐⭐⭐</div>
   </div>
 
+  
+
+  <!-- ===========================
+            JAVASCRIPT
+  ============================ -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+
+    // MOBILE DROPDOWN CLICK FIX
+    document.querySelectorAll(".dropdown > .drop-link").forEach(link => {
+      link.addEventListener("click", function(e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("open");
+        }
+      });
+    });
+
+    // Review Slider
+    let i = 0;
+    const reviews = document.querySelectorAll(".review");
+    setInterval(() => {
+      reviews[i].classList.remove("active");
+      i = (i + 1) % reviews.length;
+      reviews[i].classList.add("active");
+    }, 3000);
+  </script>
   <footer class="footer">
     <div class="footer-container">
   
@@ -590,18 +496,16 @@
       
   
       <!-- Column 2: Quick Links -->
-      
-        <div class="footer-section links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="hp2.html">Home</a></li>
-            <li><a href="product2.html">product </a></li>
-            <li><a href="aboutus1.html">about</a></li>
-            <li><a href="buying.html">Buy</a></li>
-            <li><a href="selling.html">Sell</a></li>
-            <li><a href="contact1.html">Contact</a></li>
-          </ul>
-        </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product2.html">product </a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="buying.html">Buy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </div>
+  
       <!-- Column 3: Contact -->
       <div class="footer-section contact">
         <h4>Get in Touch</h4>
@@ -624,67 +528,9 @@
       </iframe>
   
       
-            </div>
-            <div class="copyright">
-              <p>© 2025 Stackly | All Rights Reserved</p>
-            </div>
-        
+            
           </footer>
+  
 
-  <script>
-    // Toggle Responsive Menu
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
-    }
-
-    // Review Slider
-    let reviewIndex = 0;
-    const reviews = document.querySelectorAll(".review");
-    setInterval(() => {
-      reviews[reviewIndex].classList.remove("active");
-      reviewIndex = (reviewIndex + 1) % reviews.length;
-      reviews[reviewIndex].classList.add("active");
-    }, 3000);
-
-    
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const dropdowns = document.querySelectorAll('.dropdown');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('open');
-  });
-
-  // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
-  });
-
- 
-// Toggle Responsive Menu
-function toggleMenu() {
-  document.getElementById("navbar").classList.toggle("active");
-  document.getElementById("menu").classList.toggle("active");
-}
-
-// Make dropdown clickable in mobile
-document.querySelectorAll(".dropdown > .drop-link").forEach(link => {
-  link.addEventListener("link", function (e) {
-    if (window.innerWidth <= 900) {
-      e.preventDefault(); // prevent link jump
-      this.parentElement.classList.toggle("open");  
-    }
-  });
-});
-</script>
-
-
-  </script>
 </body>
 </html>

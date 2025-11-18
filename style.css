@@ -187,13 +187,13 @@
   
   /* ====== PRODUCT CARDS ====== */
   .container {
-    max-width: 1200px;
-    margin: 100px auto 0;
+    /* max-width: 1200px; */
+    /* margin: 100px auto 0; */
     padding: 0 2rem;
   }
   
   .section-title {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -670,7 +670,7 @@ header {
   
   /* ---------- Best Sellers Section ---------- */
 .best-sellers {
-    padding: 100px 80px;
+    /* padding: 100px 80px; */
     background: linear-gradient(180deg, #f9f9f9, #fff);
     text-align: center;
     overflow: hidden;

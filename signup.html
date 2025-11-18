@@ -6,15 +6,45 @@
   <title>Stackly Fashion - Redefining Luxury Style</title>
   <link rel="stylesheet" href="auth.css">
 </head>
+<style>
+ .back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #d21717cc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.back-btn:hover {
+  background: #b17f1d;
+  color: #fff;
+}
+
+</style>
 
 <body>
   <div class="auth-container">
     <div class="auth-box">
+      <a href="index.html" class="back-btn">
+        <i class="fa fa-arrow-left"></i> Back
+      </a>
       <h1 class="logo">STACKLY</h1>
       <h2>Create Account</h2>
       <p>Join Stackly and explore luxury fashion</p>
 
       <form id="signupForm" class="auth-form">
+
         <div class="input-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" placeholder="Enter your full name" required />
@@ -33,7 +63,6 @@
           </div>
         </div>
 
-        <!-- ✅ Added Confirm Password Field -->
         <div class="input-group">
           <label for="confirmPassword">Confirm Password</label>
           <div class="password-wrapper">
@@ -41,27 +70,52 @@
             <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
           </div>
         </div>
-        
 
-        <!-- <button type="submit" class="btn"><a href="./hp2 404.html">Sign Up</button> -->
-          <button  type="submit" class="btn" onclick="window.location.href='./hp2 404.html'">Sign up</button>
-          <!-- <button class="btn" onclick="window.location.href='404.html'">Shop Now</button> -->
-
-
-
+        <!-- FIXED BUTTON: No inline onclick -->
+        <button type="submit" class="btn">Sign up</button>
 
         <p class="switch-text">Already have an account?
           <a href="login.html">Login</a>
         </p>
+
       </form>
     </div>
   </div>
 
   <script>
+
     function togglePassword(id) {
       const field = document.getElementById(id);
       field.type = field.type === "password" ? "text" : "password";
     }
+
+    // FULL VALIDATION + REDIRECT
+    document.getElementById("signupForm").addEventListener("submit", function(e){
+      e.preventDefault(); // stop auto submit
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      // EMPTY FIELD POPUP
+      if(name === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // PASSWORD MATCH
+      if(password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // SUCCESS → Redirect to 404 page
+      window.location.href = "./hp2 404.html";
+    });
+
+
+    
 
     // Optional: confirm password validation
     // document.getElementById("signupForm").addEventListener("submit", function (e) {

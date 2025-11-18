@@ -20,6 +20,35 @@
       text-decoration: underline;
     }
 
+
+    .back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #d21717cc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.back-btn i {
+  font-size: 18px;
+}
+
+.back-btn:hover {
+  background: #b17f1d;
+  color: #fff;
+}
+
 </style>
 <body>
   <div class="auth-container" >
@@ -45,11 +74,19 @@
           <div class="forgot-password">
             
             <a href="forgot.html"><a href="./404.html" >Forgot Password?</a></a>
-          
+
+            <a href="index.html" class="back-btn">
+              <i class="fa fa-arrow-left"></i> Back
+            </a>
+            
         </div>
 
+        <button type="submit" class="btn new-auth-submit">Login</button>
+<p id="newAuthError" class="new-auth-error"></p>
+
+
         
-        <button  type="submit" class="btn" onclick="window.location.href='./404.html'">Login</button>
+        <!-- <button  type="submit" class="btn" onclick="window.location.href='./404.html'">Login</button> -->
 
 
         <p class="switch-text">Don't have an account? 
@@ -58,6 +95,27 @@
       </form>
     </div>
   </div>
+  <script>
+    
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // stop auto reload
+
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let errorBox = document.getElementById("newAuthError");
+
+    if (email === "" || password === "") {
+        errorBox.innerText = "⚠️ Please fill all fields";
+        errorBox.style.color = "red";
+        return; 
+    }
+
+    // if fields filled → redirect
+    window.location.href = "./404.html";
+});
+
+
+  </script>
 
   <script src="auth.js"></script>
 </body>

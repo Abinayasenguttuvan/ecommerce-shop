@@ -12,68 +12,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f7f7f7;
 }
-header {
-  width: 100%;
-  background: #d6b77b;
-  color: #fff;
-  padding: 15px 0;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  animation: fadeInDown 0.6s ease;
-}
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px);} 
-  to { opacity: 1; transform: translateY(0);} 
-}
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: #f3b200;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-nav ul li {
-  position: relative;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s ease;
-}
-nav a:hover {
-  
-  color: #f3b200;
-}
-ul.dropdown {
-  display: none;
-  position: absolute;
-  top: 35px;
-  background: #333;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-nav ul li:hover .dropdown {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-.content { margin-top: 120px; padding: 20px; text-align: center; }
-h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
-@keyframes fadeUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+
 
 /* ===== Footer ===== */
 .footer {
@@ -191,205 +130,233 @@ h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
 .modal-content { background: white; padding: 20px; width: 40%; border-radius: 10px; animation: fadeUp 0.6s ease; }
 
-/* Footer */
-.footer {
-  background: url('./hp2 footer.webp') no-repeat center center/cover;
-  color: white;
-  padding: 40px 20px 20px;
-  font-family: 'Poppins', sans-serif;
-}
-.footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; max-width: 1200px; margin: auto; }
-.footer-section { flex: 1; min-width: 250px; }
-.footer-logo { width: 80px; margin-bottom: 10px; }
-.footer h3 { color: #00e0b8; }
-
-/* Responsive Menu Button */
-.menu-btn { display: none; font-size: 28px; color: white; cursor: pointer; }
-
-/* ===== RESPONSIVE MEDIA QUERIES ADDED BELOW ===== */
-
-/* ---------- Tablets (<=1024px) ---------- */
-@media (max-width: 1024px) {
-  nav ul { gap: 15px; }
-  .product-section { flex-direction: column; align-items: center; }
-  .product-images, .product-info { width: 80%; }
-  .modal-content { width: 60%; }
-  .related-grid { justify-content: center; }
+.product-images {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
 }
 
-/* ---------- Mobile (<=768px) ---------- */
-@media (max-width: 768px) {
-  nav { justify-content: space-between; padding: 0 20px; }
-  .menu-btn { display: block; }
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-  }
-  nav.active ul { display: flex; }
-  nav ul li { margin: 10px 0; }
-  .product-section { flex-direction: column; }
-  .product-images, .product-info { width: 100%; }
-  .product-images img { border-radius: 8px; }
-  .modal-content { width: 80%; }
-  .related-grid { flex-direction: column; align-items: center; }
-  .footer-container { flex-direction: column; text-align: center; }
-}
-
-/* ---------- Small Mobile (<=480px) ---------- */
-@media (max-width: 480px) {
-  h1 { font-size: 26px; }
-  nav a { font-size: 16px; }
-  .btn { padding: 10px 14px; font-size: 14px; }
-  .product-info h2 { font-size: 20px; }
-  .price { font-size: 20px; }
-  .image-slider img { width: 45%; }
-  .footer-section { min-width: 100%; }
-  iframe { height: 180px; }
-}
-
-
-/* Dropdown Base */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: #222;
-  padding: 12px 0;
-  list-style: none;
-  width: 180px;
-  top: 38px;
-  border-radius: 6px;
-  z-index: 999;
-}
-
-/* Desktop Hover */
-.dropdown:hover .dropdown-menu {
+.product-images img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
   display: block;
 }
-
-/* Mobile dropdown override */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: relative;
-    top: 0;
-    background: #f1f0f0;
-    width: 100%;
+@media (max-width: 600px) {
+  .product-images {
+    max-width: 320px;
   }
 }
 
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+/* ============================
+   RESPONSIVE MENU NEW SYSTEM
+   ============================ */
 
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
+   .stackly-rsp-toggle {
     display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 10px 0;
-  }
-}
-/* ---------- Navigation Bar ---------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 25px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #000;
 }
 
-#nav-links {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
-
-#nav-links li {
-  position: relative;
-}
-
-#nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-/* Dropdown */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 38px;
-  left: 0;
-  background: #222;
-  padding: 12px 0;
-  list-style: none;
-  border-radius: 5px;
-  width: 160px;
-}
-
-.dropdown-menu li {
-  text-align: left;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Mobile Menu Button */
-.menu-btn {
-  display: none;
-  font-size: 30px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ---------- Mobile (<=768px) ---------- */
+/* MOBILE */
 @media (max-width: 768px) {
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    position: absolute;
-    top: 65px;
-    left: 0;
-  }
 
-  #nav-links.active {
+    /* .stackly-new-navbar {
+        position: relative;
+    }
+
+    .stackly-rsp-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        z-index: 999999;
+    } */
+
+    /* Hide menu initially */
+    /* .stackly-new-menu {
+        display: none;
+        flex-direction: column !important;
+        background: white;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        gap: 15px;
+        z-index: 9999;
+        box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    } */
+
+    /* Show menu when active */
+    /* .stackly-new-menu.stackly-rsp-open {
+        display: flex !important;
+    }
+
+    .stackly-new-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .stackly-new-menu li a {
+        font-size: 18px;
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+    } */
+}
+
+
+
+
+
+
+header {
+      width: 100%;
+      background: #d6b77b;
+      color: #fff;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      width: 120px;
+    }
+
+    /* NAV MENU */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* HOVER COLOR */
+    nav ul li a:hover {
+      /* color: #f3b200; */
+    }
+
+    /* MENU BUTTON */
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+
+    .stackly-new-header {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 99999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.stackly-new-navbar {
     display: flex;
-  }
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+}
 
-  .menu-btn {
+.stackly-new-logo img {
+    width: 150px;
+}
+
+/* Desktop Menu */
+.stackly-new-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.stackly-new-menu li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #222;
+    transition: .3s;
+}
+
+.stackly-new-menu li a:hover {
+    color: #c49b66;
+}
+
+/* Hamburger Button */
+.stackly-new-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.stackly-new-menu-btn span {
+    width: 32px;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+}
+
+/* ============================
+   MOBILE RESPONSIVE MENU
+   ============================ */
+   @media (max-width: 992px) {
+
+.stackly-new-menu-btn {
+    display: flex;
+}
+
+.stackly-new-menu {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 30px;
+    text-align: center;
+    transition: 0.4s;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+.stackly-new-menu.active {
+    right: 0;
+}
+
+.stackly-new-menu li a {
+    font-size: 22px;
+    padding: 10px 0;
     display: block;
-  }
+}
+}
 
-  .dropdown-menu {
-    position: relative;
-    background: none;
-    box-shadow: none;
-  }
-
-  .dropdown-menu li a {
-    color: #fff;
-  }
+/* Full width on very small screens */
+@media (max-width: 480px) {
+.stackly-new-menu {
+    width: 100%;
+}
 }
 
 
@@ -400,37 +367,42 @@ h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
 <body>
   <!-- 🟢 YOUR ORIGINAL CONTENT BELOW (unchanged) -->
   <!-- ===== HEADER + NAV ===== -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="./logo.webp" style="width:150px;">
-      </div>
+  <!-- ===========================
+        HEADER + MENU FIXED
+  ============================ -->
   
-      <!-- Mobile Menu Button -->
-      <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  
-      <!-- Main Menu -->
-      <ul id="nav-links">
-        
-  
-        <li class="dropdown">
-          <a href="./hp2.html">Home2 ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="./index.html">Home1</a></li>
-           
-          </ul>
-        </li>
-  
-        <li><a href="buying.html">Buy</a></li>
-        <!-- <li><a href="selling.html">Sell</a></li> -->
-        <li><a href="product2.html">Product</a></li>
-        <li><a href="aboutus1.html">About Us</a></li>
-        <li><a href="contact1.html">Contact</a></li>
-        <li><a href="login1.html">Login</a></li>
-        <li><a href="dashbored2.html">Dashboard</a></li>
-      </ul>
+
+
+  <header class="stackly-new-header">
+    <nav class="stackly-new-navbar">
+
+        <div class="stackly-new-logo">
+            <img src="./logo.webp" alt="logo">
+        </div>
+
+        <!-- HAMBURGER BUTTON -->
+        <div class="stackly-new-menu-btn" onclick="toggleStacklyMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- NAVIGATION LINKS -->
+        <ul class="stackly-new-menu" id="stacklyNewMenu">
+
+            <li><a href="hp2.html">Home2</a></li>
+            <li><a href="index.html">Home1</a></li>
+            <li><a href="buying.html">Buy</a></li>
+            <li><a href="product2.html">Product</a></li>
+            <li><a href="aboutus1.html">Aboutus</a></li>
+            <li><a href="contact1.html">Contact</a></li>
+            <li><a href="login1.html">Login</a></li>
+            <li><a href="dashbored2.html">Dashboard</a></li>
+
+        </ul>
+
     </nav>
-  </header>
+</header>
   
 
   <div class="container">
@@ -529,6 +501,8 @@ h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
     </div>
   </section>
   
+  
+
   <!-- Frequently Bought Together -->
   <section style="padding:20px; background:#fff;">
     <h2>Frequently Bought Together</h2>
@@ -537,63 +511,14 @@ h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
       <img src="./hp2 shoe.webp" style="width:120px; border-radius:8px;">
       <span style="font-size:30px;">+</span>
       <img src="./hp2 glass.webp" style="width:120px; border-radius:8px;">
-      <span style="font-size:30px;">+</span>
-      <img src="./hp2 bracelet.webp" style="width:120px; border-radius:8px;">
-    </div>
+      <span style="font-size:30px;"></span>
+      <!-- <img src="./hp2 bracelet.webp" style="width:120px; border-radius:8px;">
+    </div> -->
   </section>
   
-  <!-- Delivery Date Calculator -->
-  <section style="padding:20px;">
-    <h2>Delivery Date Calculator</h2>
-    <input type="date" id="deliveryDate" />
-    <button class="btn" onclick="calculateDelivery()">Check Delivery</button>
-    <p id="deliveryResult"></p>
-  </section>
   
-  <!-- Offer Countdown Timer -->
-  <!-- <section style="padding:20px; background:#ffe6f2; text-align:center;">
-    <h2>Limited Time Offer!</h2>
-    <h3 id="countdown" style="font-size:28px;"></h3>
-  </section> -->
   
-  <!-- Sticky Buy Now Bar -->
-  <!-- <div class="sticky-buybar" style="position:fixed; bottom:0; left:0; width:100%; background:#111; color:white; padding:15px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
-    <span style="font-size:18px;">Premium Stylish Product - ₹1,299</span>
-    <button class="btn" style="background:#e60073;">Buy Now</button>
-  </div> -->
   
-  <script>
-  // Delivery Calculator Script
-  function calculateDelivery() {
-    let input = document.getElementById('deliveryDate').value;
-    let result = document.getElementById('deliveryResult');
-    if (!input) {
-      result.innerText = "Please select a date";
-      return;
-    }
-    result.innerText = "Estimated delivery by: " + input;
-  }
-  
-  // Countdown Timer Script
-  let countdownTimer = setInterval(function(){
-    let endDate = new Date().getTime() + 86400000; // 24 hrs
-    let now = new Date().getTime();
-    let distance = endDate - now;
-  
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-    document.getElementById('countdown').innerText = hours + "h " + minutes + "m " + seconds + "s ";
-  
-    if (distance < 0) {
-      clearInterval(countdownTimer);
-      document.getElementById('countdown').innerText = "Offer Ended";
-    }
-  }, 1000);
-  </script>
-  
-    <!-- Advanced Animations Added -->
     <script>
       // Image Zoom & Pan
       const zoomImg = document.querySelector('.product-main-img');
@@ -1107,6 +1032,107 @@ h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
         opacity: 1;
         transform: translateY(0);
       }
+
+
+       /* =======================================
+   NEW UNIQUE RESPONSIVE HEADER (NO CLASH)
+   ======================================= */
+
+/* .stackly-new-header {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 99999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.stackly-new-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+}
+
+.stackly-new-logo img {
+    width: 150px;
+} 
+
+/* Desktop Menu */
+ /* .stackly-new-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+} */
+
+/* .stackly-new-menu li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #222;
+    transition: .3s;
+}
+
+.stackly-new-menu li a:hover {
+    color: #c49b66;
+}   */
+
+/* Hamburger Button */
+/* .stackly-new-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.stackly-new-menu-btn span {
+    width: 32px;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+} */
+
+/* ============================
+   MOBILE RESPONSIVE MENU
+   ============================ */
+ @media (max-width: 992px) { */
+
+    .stackly-new-menu-btn {
+        display: flex;
+    }
+
+    .stackly-new-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 30px;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .stackly-new-menu.active {
+        right: 0; */
+    }
+
+    .stackly-new-menu li a {
+        font-size: 22px;
+        padding: 10px 0;
+        display: block;
+    }
+}
+
+/* Full width on very small screens */
+@media (max-width: 480px) {
+    .stackly-new-menu {
+        width: 100%;
+    }
+} 
+
     </style>
   
     <script>
@@ -1178,30 +1204,13 @@ h1 { font-size: 40px; animation: fadeUp 0.8s ease; }
   
 
   <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-   
     
 
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const dropdowns = document.querySelectorAll('.dropdown');
+    function toggleStacklyMenu() {
+    document.getElementById("stacklyNewMenu").classList.toggle("active");
+}
 
-  toggle.addEventListener('link', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('open');
-  });
 
-  // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('link', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
-  });
 </script>
 
 

@@ -27,14 +27,7 @@
       z-index: 1000;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #222;
-      z-index: 1001;
-    }
-
+   
     nav ul {
       display: flex;
       list-style: none;
@@ -52,45 +45,7 @@
       color: #e63946;
     }
 
-    /* ===== Dropdown ===== */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      list-style: none;
-      padding: 10px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      min-width: 160px;
-      z-index: 999;
-    }
-
-    .dropdown-menu li {
-      text-align: left;
-      padding: 8px 20px;
-    }
-
-    .dropdown-menu li a {
-      color: #222;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-menu li a:hover {
-      color: #e91e63;
-      background: rgba(233, 30, 99, 0.05);
-    }
-
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
+    
     /* ===== Hero Section ===== */
     
     .shop-hero {
@@ -141,27 +96,13 @@
         gap: 30px;
       }
 
-      .dropdown-menu {
-        position: static;
-        display: none;
-        box-shadow: none;
-        background: none;
-        padding: 0;
-      }
-
-      .dropdown.open .dropdown-menu {
-        display: block;
-      }
-
-      .dropdown-menu li {
-        padding: 10px 0;
-      }
+      
     }
 
     @media (max-width: 768px) {
       .shop-section {
         flex-direction: column;
-        padding: 0 20px;
+        /* padding: 0 20px; */
       }
 
       .shop-filters {
@@ -350,35 +291,78 @@
         font-size: 3.5rem;
       }
     }
+
+    /* MOBILE MENU BUTTON */
+.menu-btn {
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #222;
+  user-select: none;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 900px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    color: #222;
+  }
+}
+
   </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html">
-    <img src="./logo.webp" alt="Stackly Logo" style="width: 150px;">
-  </a>
+  <header>
+    <img src="./logo.webp" alt="Stackly Logo">
+    <div class="menu-btn" id="menuBtn">☰</div>
 
-  <!-- ✅ MENU TOGGLE -->
-  <span class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></span>
+    
+    <nav>
+      <ul id="menu">
+        <!-- <li class="dropdown"> -->
+        <li class="dropdown">  
+          <!-- <a href="./index.html">Home1 ▾</a> -->
+          <a href="./index.html">Home1</a>
+          <!-- <ul class="dropdown-menu">
+            <li><a href="./hp2.html">Home2</a></li>
+          </ul> -->
+        </li>
+        <li><a href="./hp2.html">Home2</a></li>
+        <li><a href="shop.html">shop</a></li>
+        <li><a href="product.html">product</a></li>
+        <li><a href="blog.html">blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav id="navMenu">
-    <ul id="menu">
-      <li class="dropdown">
-        <a href="./index.html">Home1 ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="./hp2.html">Home2</a></li>
-        </ul>
-      </li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="product.html">Product</a></li>
-      <li><a href="blog.html">Blogs</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="dashboard.html">Dashboard</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
-</header>
 
 <!-- HERO -->
 <section class="shop-hero">
@@ -519,27 +503,16 @@
 
 <!-- ✅ JS FOR MENU TOGGLE -->
 <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
+  
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
 
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-    menuToggle.innerHTML = navMenu.classList.contains("show")
-      ? '<i class="fas fa-times"></i>'
-      : '<i class="fas fa-bars"></i>';
-  });
-
-  // For mobile dropdowns
-  const dropdowns = document.querySelectorAll(".dropdown > a");
-  dropdowns.forEach(link => {
-    link.addEventListener("click", e => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault();
-        link.parentElement.classList.toggle("open");
-      }
-    });
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
   });
 </script>
+
+
 
 <script src="shop.js"></script>
 </body>

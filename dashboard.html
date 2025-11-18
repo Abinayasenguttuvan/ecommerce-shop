@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stackly Fashion - Redefining Luxury Style</title>
-  
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,281 +19,391 @@
 
 <body>
 
-<!-- ============================
+  <!-- ============================
        UPDATED RESPONSIVE HEADER
 ============================= -->
-<header class="header" id="header">
-  <a href="index.html">
-    <img src="./logo.webp" alt="Stackly Logo" class="logo">
-  </a>
+  <header class="header" id="header">
+    <a href="index.html">
+      <img src="./logo.webp" alt="Stackly Logo" class="logo">
+    </a>
 
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-  <nav class="nav" id="navMenu">
-    <ul class="nav-links">
+    <nav class="nav" id="navMenu">
+      <ul class="nav-links">
 
-      <!-- Dropdown -->
-      <li class="dropdown">
-        <a href="./index.html">Home1 ▾</a>
+        <!-- Dropdown -->
+        <li class="dropdown">
+          <a href="./index.html">Home1</a>
+        <li><a href="hp2.html">Home2</a></li>
         <ul class="dropdown-menu">
-          <li><a href="hp2.html">Home2</a></li>
+
         </ul>
-      </li>
+        </li>
 
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="product.html">Product</a></li>
-      <li><a href="blog.html">Blogs</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="dashboard.html">Dashboard</a></li>
-      <li><a href="login.html">Login</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="login.html">Login</a></li>
 
-    </ul>
-  </nav>
-</header>
+      </ul>
+    </nav>
+  </header>
 
-<style>
-/* GLOBAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+  <style>
+    /* GLOBAL RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-body {
-  padding-top: 90px;
-  background: linear-gradient(to right, #f6f7fb, #eef2f7);
-  color: #333;
-  overflow-x: hidden;
-}
+    body {
+      padding-top: 90px;
+      background: linear-gradient(to right, #f6f7fb, #eef2f7);
+      color: #333;
+      overflow-x: hidden;
+    }
 
-/* ============================
+    /* ============================
         HEADER 
 ============================= */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 5%;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 5%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
 
-.logo {
-  width: 145px;
-}
+    .logo {
+      width: 120px;
+    }
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.nav-links li {
-  list-style: none;
-}
+    .nav-links li {
+      list-style: none;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  padding: 7px 8px;
-  margin: 0 4px;
-  transition: 0.3s;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      padding: 7px 8px;
+      margin: 0 4px;
+      transition: 0.3s;
+    }
 
-.nav-links a:hover {
-  color: #f1c40f;
-}
+    .nav-links a:hover {
+      color: #f1c40f;
+    }
 
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-}
+    /* DROPDOWN */
+    .dropdown {
+      position: relative;
+    }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: #fff;
-  padding: 10px 0;
-  min-width: 150px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 100;
-}
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: #fff;
+      padding: 10px 0;
+      min-width: 150px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+    }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
 
-.dropdown-menu li {
-  padding: 5px 15px;
-}
+    .dropdown-menu li {
+      padding: 5px 15px;
+    }
 
-.dropdown-menu li a {
-  color: #444;
-  font-weight: 500;
-}
+    .dropdown-menu li a {
+      color: #444;
+      font-weight: 500;
+    }
 
-/* MENU BUTTON (MOBILE) */
-.menu-btn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #333;
-}
+    /* MENU BUTTON (MOBILE) */
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #333;
+    }
 
-/* ============================
+    /* ============================
       MOBILE MENU
 ============================= */
-@media (max-width: 900px) {
+    @media (max-width: 900px) {
 
-  .menu-btn {
-    display: block;
-  }
+      .menu-btn {
+        display: block;
+      }
 
-  .nav {
-    position: absolute;
-    top: 80px;
-    width: 100%;
-    left: 0;
-    background: white;
-    display: none;
-    padding: 20px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
+      .nav {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        left: 0;
+        background: white;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
 
-  .nav.open {
-    display: block;
-    animation: slideDown 0.3s ease;
-  }
+      .nav.open {
+        display: block;
+        animation: slideDown 0.3s ease;
+      }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-15px);
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: none;
+        /* disable hover on mobile */
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        padding: 0;
+      }
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: none;  /* disable hover on mobile */
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-    position: static;
-    box-shadow: none;
-    padding: 0;
-  }
-}
-
-/* ============================
+    /* ============================
      DASHBOARD CARD SECTION
 ============================= */
-.cards {
-  padding-top: 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
+    .cards {
+      padding-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
 
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: 0.3s;
+    }
 
-.card:hover {
-  transform: translateY(-8px);
-}
+    .card:hover {
+      transform: translateY(-8px);
+    }
 
-.icon {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 10px;
-  border-radius: 50%;
-  background: #f1c40f;
-  color: white;
-}
+    .icon {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      padding: 10px;
+      border-radius: 50%;
+      background: #f1c40f;
+      color: white;
+    }
 
-/* Dashboard Graphs */
-.dashboard-section {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 25px;
-}
+    /* Dashboard Graphs */
+    .dashboard-section {
+      margin-top: 40px;
+      /* display: grid; */
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
 
-canvas {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-}
+    canvas {
+      background: white;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+    }
 
-@media (max-width: 900px) {
-  .dashboard-section {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 900px) {
+      .dashboard-section {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* ============================
+    /* ============================
         FOOTER
 ============================= */
-.footer {
-  background: url('./hp1 footer.webp');
-  color: #fff;
-  padding: 40px 20px 20px;
-  margin-top: 40px;
-}
+    .footer {
+      background: url('./hp1 footer.webp');
+      color: #fff;
+      padding: 40px 20px 20px;
+      margin-top: 40px;
+    }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-.footer-logo {
-  width: 200px;
-}
+    .footer-logo {
+      width: 200px;
+    }
 
-.footer-section ul {
-  list-style: none;
-}
+    .footer-section ul {
+      list-style: none;
+    }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  opacity: 0.8;
-}
-</style>
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
 
-<!-- ============================
+
+    /* ---------- Stackly unique responsive stats (collision-proof) ---------- */
+    .stackly-stats-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 18px auto;
+      padding: 10px 16px;
+      box-sizing: border-box;
+    }
+
+    .stackly-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* desktop: 4 columns */
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    /* each card */
+    .stackly-stat-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(15, 15, 15, 0.06);
+      transition: transform .22s ease, box-shadow .22s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    /* hover lift */
+    .stackly-stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(15, 15, 15, 0.09);
+    }
+
+    /* icon circle */
+    .stackly-stat-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f3b20010, #e91e6320);
+      font-size: 20px;
+      color: #e91e63;
+      box-shadow: inset 0 -6px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    /* heading, value, meta */
+    .stackly-stat-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-top: 6px;
+    }
+
+    .stackly-stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      margin-top: 4px;
+      line-height: 1;
+    }
+
+    .stackly-stat-meta {
+      font-size: 13px;
+      color: #777;
+      margin-top: 6px;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .stackly-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* tablet 2 columns */
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .stackly-stats-grid {
+        grid-template-columns: 1fr;
+        /* mobile 1 column */
+      }
+
+      .stackly-stat-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+      }
+
+      .stackly-stat-card {
+        padding: 16px;
+      }
+
+      /* center the whole wrapper on very small screens */
+      .stackly-stats-wrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  </style>
+
+  <!-- ============================
        DASHBOARD CARDS
 ============================= -->
-<section class="cards">
+  <!-- <section class="cards">
   <div class="card">
     <div class="icon"><i data-lucide="shopping-bag"></i></div>
     <h3>Today</h3>
@@ -320,123 +431,172 @@ canvas {
     <h2 id="customers">0</h2>
     <p>+7.5%</p>
   </div>
-</section>
+</section> -->
 
-<!-- ============================
+  <section class="stackly-stats-wrapper">
+    <div class="stackly-stats-grid">
+
+      <div class="stackly-stat-card">
+        <div class="stackly-stat-icon" aria-hidden="true">
+          <!-- you can replace with <i class="fa fa-shopping-bag"></i> or an inline SVG -->
+          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        </div>
+        <div class="stackly-stat-title">Today</div>
+        <div id="today" class="stackly-stat-value">$0</div>
+        <div class="stackly-stat-meta">11.07.2025</div>
+      </div>
+
+      <div class="stackly-stat-card">
+        <div class="stackly-stat-icon">
+          <i class="fa fa-chart-bar" aria-hidden="true"></i>
+        </div>
+        <div class="stackly-stat-title">Yesterday</div>
+        <div id="yesterday" class="stackly-stat-value">$0</div>
+        <div class="stackly-stat-meta">11.06.2025</div>
+      </div>
+
+      <div class="stackly-stat-card">
+        <div class="stackly-stat-icon">
+          <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+        </div>
+        <div class="stackly-stat-title">This Month</div>
+        <div id="month" class="stackly-stat-value">$0</div>
+        <div class="stackly-stat-meta">In November</div>
+      </div>
+
+      <div class="stackly-stat-card">
+        <div class="stackly-stat-icon">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+        <div class="stackly-stat-title">Total Customers</div>
+        <div id="customers" class="stackly-stat-value">0</div>
+        <div class="stackly-stat-meta">+7.5%</div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- ============================
        DASHBOARD CHARTS
 ============================= -->
-<section class="dashboard-section">
-  <canvas id="salesChart"></canvas>
-  <canvas id="lineChart"></canvas>
-</section>
+  <section class="dashboard-section">
+    <canvas id="salesChart"></canvas>
+    <canvas id="lineChart"></canvas>
+  </section>
 
-<!-- ============================
+  <!-- ============================
          FOOTER
 ============================= -->
-<footer class="footer">
-  <div class="footer-container">
+  <footer class="footer">
+    <div class="footer-container">
 
-    <div class="footer-section">
-      <img src="./logo.webp" class="footer-logo">
+      <div class="footer-section">
+        <img src="./logo.webp" class="footer-logo">
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Get in Touch</h4>
+        <p>MMR complex, Salem, Tamil Nadu 636008</p>
+        <p>Email: info@thestackly.com</p>
+        <p>Phone: +91 70107 92745</p>
+      </div>
+
     </div>
 
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h4>Get in Touch</h4>
-      <p>MMR complex, Salem, Tamil Nadu 636008</p>
-      <p>Email: info@thestackly.com</p>
-      <p>Phone: +91 70107 92745</p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">© 2025 Stackly | All Rights Reserved</div>
-</footer>
+    <div class="footer-bottom">© 2025 Stackly | All Rights Reserved</div>
+  </footer>
 
 
-<script>
-lucide.createIcons();
+  <script>
+    lucide.createIcons();
 
-/* MOBILE MENU SCRIPT */
-function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("open");
-}
-
-/* Mobile dropdown */
-document.querySelectorAll(".dropdown").forEach(drop => {
-  drop.addEventListener("link", function(e) {
-    if (window.innerWidth < 900) {
-      e.preventDefault();
-      this.classList.toggle("open");
+    /* MOBILE MENU SCRIPT */
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("open");
     }
-  });
-});
 
-/* COUNTER ANIMATION */
-function animateCounter(id, start, end, duration, prefix = "$") {
-  const element = document.getElementById(id);
-  let startTime = null;
-  const step = (timestamp) => {
-    if (!startTime) startTime = timestamp;
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-    const value = Math.floor(progress * (end - start) + start);
-    element.textContent = prefix + value.toLocaleString();
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
+    /* Mobile dropdown */
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      drop.addEventListener("link", function (e) {
+        if (window.innerWidth < 900) {
+          e.preventDefault();
+          this.classList.toggle("open");
+        }
+      });
+    });
 
-animateCounter("today", 0, 1800, 2000);
-animateCounter("yesterday", 0, 1700, 2000);
-animateCounter("month", 0, 22500, 2000);
-animateCounter("customers", 0, 9999, 2000, "");
+    /* COUNTER ANIMATION */
+    function animateCounter(id, start, end, duration, prefix = "$") {
+      const element = document.getElementById(id);
+      let startTime = null;
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = prefix + value.toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
 
-/* SALES CHART */
-const ctx1 = document.getElementById('salesChart').getContext('2d');
-new Chart(ctx1, {
-  type: 'bar',
-  data: {
-    labels: ['5', '8', '14', '18', '22', '25'],
-    datasets: [{
-      label: 'Sales ($)',
-      data: [1200, 800, 1000, 1300, 1500, 1700],
-      backgroundColor: 'rgba(241,196,15,0.8)',
-      borderRadius: 8
-    }]
-  },
-  options: {
-    plugins: { legend: { display: false } },
-    scales: { y: { beginAtZero: true } }
-  }
-});
+    animateCounter("today", 0, 1800, 2000);
+    animateCounter("yesterday", 0, 1700, 2000);
+    animateCounter("month", 0, 22500, 2000);
+    animateCounter("customers", 0, 9999, 2000, "");
 
-/* CUSTOMER GROWTH */
-const ctx3 = document.getElementById('lineChart').getContext('2d');
-new Chart(ctx3, {
-  type: 'line',
-  data: {
-    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],
-    datasets: [{
-      label: 'Customer Growth',
-      data: [1000,1400,1600,2000,2500,2900,3500,4000],
-      borderColor: '#f1c40f',
-      fill: true,
-      backgroundColor: 'rgba(241,196,15,0.2)',
-      tension: 0.4
-    }]
-  }
-});
-</script>
+    /* SALES CHART */
+    const ctx1 = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['5', '8', '14', '18', '22', '25'],
+        datasets: [{
+          label: 'Sales ($)',
+          data: [1200, 800, 1000, 1300, 1500, 1700],
+          backgroundColor: 'rgba(241,196,15,0.8)',
+          borderRadius: 8
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    /* CUSTOMER GROWTH */
+    const ctx3 = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctx3, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+        datasets: [{
+          label: 'Customer Growth',
+          data: [1000, 1400, 1600, 2000, 2500, 2900, 3500, 4000],
+          borderColor: '#f1c40f',
+          fill: true,
+          backgroundColor: 'rgba(241,196,15,0.2)',
+          tension: 0.4
+        }]
+      }
+    });
+  </script>
 
 </body>
+
 </html>

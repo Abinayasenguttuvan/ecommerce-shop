@@ -128,21 +128,7 @@
       }
 
       /* Mobile Dropdown */
-      .dropdown-menu {
-        position: static;
-        display: none;
-        box-shadow: none;
-        background: none;
-        padding: 0;
-      }
-
-      .dropdown.open .dropdown-menu {
-        display: block;
-      }
-
-      .dropdown-menu li {
-        padding: 10px 0;
-      }
+     
     }
 
      /* ===== Footer ===== */
@@ -231,32 +217,74 @@
         margin-bottom: 20px;
       }
     }
+
+    /* MOBILE MENU BUTTON */
+.menu-btn {
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #222;
+  user-select: none;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 900px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    color: #222;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
   <header>
-    <a href="index.html">
-      <img src="./logo.webp" alt="Stackly Logo" style="width: 150px;">
-    </a>
-
-    <div class="menu-btn" id="menu-toggle">☰</div>
-
+    <img src="./logo.webp" alt="Stackly Logo">
+    <div class="menu-btn" id="menuBtn">☰</div>
+    
     <nav>
       <ul id="menu">
-        <li class="dropdown">
-          <a href="./index.html">Home1 ▾</a>
-          <ul class="dropdown-menu">
+        <!-- <li class="dropdown"> -->
+        <li class="dropdown">  
+          <!-- <a href="./index.html">Home1 ▾</a> -->
+          <a href="./index.html">Home1</a>
+          <!-- <ul class="dropdown-menu">
             <li><a href="./hp2.html">Home2</a></li>
-          </ul>
+          </ul> -->
         </li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="./hp2.html">Home2</a></li>
+        <li><a href="shop.html">shop</a></li>
+        <li><a href="product.html">product</a></li>
+        <li><a href="blog.html">blogs</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
       </ul>
     </nav>
   </header>
@@ -266,10 +294,11 @@
       <div class="main-image">
         <img id="currentImage" src="./hand1.webp" alt="Product Image" />
       </div>
-      <div class="thumbnails">
+      <!-- <div class="thumbnails"> -->
+      <div class="main-image">
         <img src="./thum1.webp" alt="thumb1" onclick="changeImage(this)">
-        <img src="./thum2.webp" alt="thumb2" onclick="changeImage(this)">
-        <img src="./thum3.webp" alt="thumb3" onclick="changeImage(this)">
+        <!-- <img src="./thum2.webp" alt="thumb2" onclick="changeImage(this)">
+        <img src="./thum3.webp" alt="thumb3" onclick="changeImage(this)"> -->
       </div>
       <div class="interactive">
         <h4>360° View</h4>
@@ -381,25 +410,12 @@
         </footer>
 
   <script>
-    // Toggle mobile menu
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      toggle.textContent = menu.classList.contains('active') ? '✖' : '☰';
-    });
-
-    // Handle dropdown open for mobile
-    dropdowns.forEach(link => {
-      drop.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
-          e.preventDefault();
-          drop.classList.toggle('open');
-        }
-      });
-    });
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
   </script>
 
 </body>

@@ -223,131 +223,6 @@
     margin-top: 30px;
   }
 
-  
-
-  /* Responsive Media Queries */
-  @media (max-width: 1024px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-    .hero h1 {
-      font-size: 36px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .menu-btn {
-      display: block;
-    }
-
-    nav ul {
-      display: none;
-      flex-direction: column;
-      background: #222;
-      width: 100%;
-      padding: 20px 0;
-      text-align: center;
-      gap: 18px;
-    }
-
-    nav.active ul {
-      display: flex;
-      animation: fadeIn 0.4s ease;
-    }
-
-    nav ul li a {
-      font-size: 20px;
-    }
-
-    .hero {
-      height: 40vh;
-    }
-
-    .hero h1 {
-      font-size: 32px;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-card {
-      margin: 0 10px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 26px;
-    }
-    nav ul li a {
-      font-size: 18px;
-    }
-    .btn {
-      width: 100%;
-    }
-  }
-
-  /* ===== Dropdown Menu ===== */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 999;
-  min-width: 160px;
-}
-
-.dropdown-menu li {
-  text-align: left;
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: #222;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-}
-
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 10px 0;
-  }
-}
-
-
 /* Footer base */
 .footer {
     background: url('./hp2\ footer.webp') no-repeat center center/cover;
@@ -376,7 +251,7 @@
     
     /* Logo + About section */
     .footer-logo {
-      width: 200px;
+      width: 120px;
       margin-bottom: 10px;
     }
     .footer h3 {
@@ -441,64 +316,6 @@
     display: block;
   }
 }
-/* ===== Dropdown Menu ===== */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 999;
-  min-width: 160px;
-}
-
-.dropdown-menu li {
-  text-align: left;
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: wheat;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-}
-
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 10px 0;
-  }
-}
 
 
 
@@ -513,35 +330,44 @@
       color: rgba(255,255,255,0.8);
     }
     
-
+     
 </style>
 </head>
 <body>
 
-  <header>
-    <nav id="navbar">
-        <div class="logo"><img src="./logo.webp" alt="Stackly Logo" style="width: 150px; "></div>
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <!-- ===========================
+        HEADER + MENU FIXED
+  ============================ -->
+  <header class="stackly-new-header">
+    <nav class="stackly-new-navbar">
 
-        <ul>
-          <ul id="menu">
-            <li class="dropdown">
-              <a href="./hp2.html">Home2 ▾</a>
-              <!-- <ul class="dropdown-menu"> -->
-                <li><a href="./index.html">Home1</a></li>
-                
-              
+        <div class="stackly-new-logo">
+            <img src="./logo.webp" alt="logo">
+        </div>
+
+        <!-- HAMBURGER BUTTON -->
+        <div class="stackly-new-menu-btn" onclick="toggleStacklyMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- NAVIGATION LINKS -->
+        <ul class="stackly-new-menu" id="stacklyNewMenu">
+
+            <li><a href="hp2.html">Home2</a></li>
+            <li><a href="index.html">Home1</a></li>
             <li><a href="buying.html">Buy</a></li>
-            
-            <li><a href="product2.html">product</a></li>
-            <li><a href="aboutus1.html">aboutus</a></li>
+            <li><a href="product2.html">Product</a></li>
+            <li><a href="aboutus1.html">Aboutus</a></li>
             <li><a href="contact1.html">Contact</a></li>
             <li><a href="login1.html">Login</a></li>
             <li><a href="dashbored2.html">Dashboard</a></li>
+
         </ul>
+
     </nav>
 </header>
-
 <section class="hero">
   <div class="hero-bg"></div>
   <h1>Contact Us</h1>
@@ -661,59 +487,25 @@
         </footer>
 <script>
   
-// Responsive Navbar Menu Toggle
-function toggleMenu() {
-  const navbar = document.getElementById('navbar');
-  navbar.classList.toggle('active');
+
+  function toggleStacklyMenu() {
+    document.getElementById("stacklyNewMenu").classList.toggle("active");
 }
 
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const dropdowns = document.querySelectorAll('.dropdown');
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop auto submit
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('open');
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let subject = document.getElementById("subject").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || subject === "" || message === "") {
+      alert("Please fill all fields!");
+    } else {
+      window.location.href = "./hp2 404.html"; // Redirect to 404 page
+    }
   });
-
-  // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
-  });
-</script>
-
-
-
-
-<script>
-  function toggleMenu() {
-    document.getElementById('navbar').classList.toggle('active');
-  }
-  
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const dropdowns = document.querySelectorAll('.dropdown');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('open');
-  });
-
-  // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
-  });
-
 
 </script>
 

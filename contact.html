@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stackly Fashion - Redefining Luxury Style</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="contact.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* ==== HEADER STYLES ==== */
@@ -24,6 +25,7 @@
       z-index: 1000;
     }
 
+
     nav ul {
       list-style: none;
       display: flex;
@@ -41,178 +43,80 @@
       color: #c7923e;
     }
 
-    /* ==== HAMBURGER MENU ==== */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      width: 28px;
-      height: 20px;
-      justify-content: space-between;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 100%;
-      background: #000;
-      border-radius: 2px;
-      transition: 0.3s ease;
-    }
-
-    /* ==== CONTACT HERO ==== */
-    /* .contact-hero {
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 150px 20px 100px;
-      margin-top: 80px;
-    } */
-
-    /* ==== RESPONSIVE DESIGN ==== */
-    @media (max-width: 1024px) {
-      nav ul {
-        gap: 15px;
-      }
-    }
-
-    @media (max-width: 768px) {
+   /* ===== Responsive Menu ===== */
+    @media (max-width: 950px) {
       .menu-toggle {
         display: flex;
       }
 
-      nav {
+      nav ul {
         position: fixed;
         top: 70px;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        transition: 0.4s ease;
-        display: flex;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: #fff;
         flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        padding-top: 100px;
-      }
-
-      nav.active {
-        right: 0;
-      }
-
-      nav ul {
-        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
         gap: 30px;
+        padding-top: 50px;
+        transition: all 0.4s ease;
+        text-align: center;
       }
 
-      nav ul li a {
-        font-size: 1.1rem;
+      nav ul.active {
+        left: 0;
       }
 
-      /* Animate hamburger icon */
-      .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translateY(8px);
+      .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: #fafafa;
       }
-      .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-      .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px);
+
+      .dropdown.open .dropdown-menu {
+        display: flex;
       }
     }
 
-    @media (max-width: 600px) {
-      .contact-container {
-        flex-direction: column;
-        padding: 20px;
-      }
-      .info-card, .form-container {
-        width: 100%;
-      }
-      iframe {
-        width: 100%;
-      }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .footer-container {
+    /* ===== Hero Section ===== */
+    .parallax {
+      background: url('hero-bg.webp') center/cover no-repeat fixed;
+      min-height: 90vh;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px;
     }
 
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-      }
+    .parallax-content h2 {
+      font-size: 3rem;
+      letter-spacing: 1px;
     }
 
-    /* ===== Dropdown Menu ===== */
-.dropdown {
-  position: relative;
-}
+    .hero-text-scroll {
+      margin-top: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: scrollText 20s linear infinite;
+      color: #f3f3f3;
+    }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 999;
-  min-width: 160px;
-}
+    @keyframes scrollText {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
 
-.dropdown-menu li {
-  text-align: left;
-  padding: 8px 20px;
-}
+    /* ===== Cards, Runway, Best Sellers, Footer ===== */
+    .container {
+      /* padding: 100px 5% 60px; */
+      text-align: center;
+    }
 
-.dropdown-menu li a {
-  color: #222;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-}
-
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li {
-    padding: 10px 0;
-  }
-}
 
  /* ===== Footer ===== */
     .footer {
@@ -241,7 +145,7 @@
   
   /* Logo + About section */
   .footer-logo {
-    width: 200px;
+    width: 120px;
     margin-bottom: 10px;
   }
   .footer h3 {
@@ -285,6 +189,44 @@
     font-size: 14px;
     color: rgba(255,255,255,0.8);
   }
+
+  .menu-toggle {
+  width: 35px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 4px;
+  background: #000;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Hamburger Animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media (max-width: 950px) {
+  .menu-toggle { display: flex; }
+  nav ul { left: -100%; }
+  nav ul.active { left: 0; }
+}
+
+
+  
+
   </style>
 </head>
 
@@ -292,9 +234,7 @@
 
   <!-- HEADER -->
   <header>
-    <a href="index.html">
-      <img src="./logo.webp" alt="Stackly Logo" style="width: 150px;">
-    </a>
+    <img src="./logo.webp" alt="Stackly Logo">
 
     <div class="menu-toggle" id="menu-toggle">
       <span></span>
@@ -302,23 +242,26 @@
       <span></span>
     </div>
 
-    <nav id="navMenu">
-      <ul>
-        <ul id="menu">
-          <li class="dropdown">
-            <a href="./index.html">Home1 ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="./hp2.html">Home2</a></li>
-              
-            </ul>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="blog.html">Blogs</a></li>
+    <nav>
+      <ul id="menu">
+        <!-- <li class="dropdown"> -->
+        <li class="dropdown">  
+          <!-- <a href="./index.html">Home1 ▾</a> -->
+          <a href="./index.html">Home1</a>
+          <!-- <ul class="dropdown-menu">
+            <li><a href="./hp2.html">Home2</a></li>
+          </ul> -->
+        </li>
+        <li><a href="./hp2.html">Home2</a></li>
+        <li><a href="shop.html">shop</a></li>
+        <li><a href="product.html">product</a></li>
+        <li><a href="blog.html">blogs</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
       </ul>
     </nav>
+  </div>
   </header>
 
   <!-- CONTACT HERO -->
@@ -353,7 +296,11 @@
         <input type="text" id="name" placeholder="Your Name" required>
         <input type="email" id="email" placeholder="Your Email" required>
         <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit" class="btn" onclick="window.location.href='./404.html'">Send Message</button> 
+          <!-- <button type="submit" class="btn" onclick="window.location.href='./404.html'">Send Message</button>  -->
+
+          <button type="submit" class="btn contact-submit-btn">Send Message</button>
+<p id="contactErrorMsg" class="contact-error-msg"></p>
+
       </form>
 
       
@@ -396,34 +343,42 @@
  
 
   <script>
-    // ==== MOBILE MENU SCRIPT ====
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("navMenu");
 
-    menuToggle.addEventListener("link", () => {
-      navMenu.classList.toggle("active");
-      menuToggle.classList.toggle("active");
-    });
 
-    
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const dropdowns = document.querySelectorAll('.dropdown');
 
-  toggle.addEventListener('link', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('open');
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop auto redirect
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let errorBox = document.getElementById("contactErrorMsg");
+
+    // Validation
+    if (name === "" || email === "" || message === "") {
+        errorBox.innerText = "⚠️ Please fill all fields before sending.";
+        errorBox.style.color = "red";
+        errorBox.style.marginTop = "10px";
+        return;
+    }
+
+    // After validated — redirect
+    window.location.href = "./404.html";
+});
+
+
+
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
   });
 
-  // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('link', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
-  });
+
+
+
 
 
   </script>

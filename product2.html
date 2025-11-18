@@ -88,116 +88,105 @@ body {
   
 
 
-/* ===== HEADER ===== */
-header {
-  width: 100%;
-  background:#d6b77b;
-  color: #fff;
-  padding: 15px 0;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  animation: fadeInDown 0.6s ease;
+/* =======================================
+   NEW UNIQUE RESPONSIVE HEADER (NO CLASH)
+   ======================================= */
+
+   .stackly-new-header {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 99999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px);} 
-  to { opacity: 1; transform: translateY(0);} 
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.logo img {
-  width: 150px;
-}
-
-/* ===== NAV LINKS ===== */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: white;
-  background-color: black;
-  padding: 6px 12px;
-  border-radius: 6px;
-}
-
-/* ===== MENU BUTTON ===== */
-.menu-btn {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: black;
-  transition: 0.3s;
-}
-.menu-btn.active {
-  transform: rotate(90deg);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  nav {
-    flex-direction: row;
+.stackly-new-navbar {
+    display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-  }
+    align-items: center;
+    padding: 18px 5%;
+}
 
-  nav ul {
+.stackly-new-logo img {
+    width: 150px;
+}
+
+/* Desktop Menu */
+.stackly-new-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.stackly-new-menu li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #222;
+    transition: .3s;
+}
+
+.stackly-new-menu li a:hover {
+    color: #c49b66;
+}
+
+/* Hamburger Button */
+.stackly-new-menu-btn {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    width: 100%;
-    background:#000 ;
-    /* background: rgba(255,255,255,0.97); */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  nav.active ul {
-    display: flex;
-    animation: slideDown 0.4s ease;
-  }
-
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  nav a {
-    color: white;
-    font-size: 18px;
-  }
+    gap: 6px;
+    cursor: pointer;
 }
+
+.stackly-new-menu-btn span {
+    width: 32px;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+}
+
+/* ============================
+   MOBILE RESPONSIVE MENU
+   ============================ */
+@media (max-width: 992px) {
+
+    .stackly-new-menu-btn {
+        display: flex;
+    }
+
+    .stackly-new-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 30px;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .stackly-new-menu.active {
+        right: 0;
+    }
+
+    .stackly-new-menu li a {
+        font-size: 22px;
+        padding: 10px 0;
+        display: block;
+    }
+}
+
+/* Full width on very small screens */
+@media (max-width: 480px) {
+    .stackly-new-menu {
+        width: 100%;
+    }
+}
+
 
 /* ===== CONTENT SPACING ===== */
 .filter-bar {
@@ -377,92 +366,157 @@ nav a:hover {
   }
 }
 
-/* ===== Dropdown Menu ===== */
-.dropdown {
-  position: relative;
-}
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
+
+/* ===========================
+    NEW UNIQUE RESPONSIVE HEADER
+=========================== */
+
+.stackly-new-header {
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
   left: 0;
-  background: white;
+  z-index: 5000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.stackly-new-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+}
+
+.stackly-new-logo img {
+  width: 150px;
+}
+
+/* Desktop Menu */
+.stackly-new-menu {
+  display: flex;
+  gap: 30px;
   list-style: none;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 999;
-  min-width: 160px;
 }
 
-.dropdown-menu li {
-  text-align: left;
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: #222;
+.stackly-new-menu li a {
   text-decoration: none;
-  display: block;
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.dropdown-menu li a:hover {
-  color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
+.stackly-new-menu li a:hover {
+  color: #c89b4e;
 }
 
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
+/* Hamburger Button */
+.stackly-new-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
 }
 
-/* ===== Responsive Dropdown (for mobile toggle) ===== */
-@media (max-width: 950px) {
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
+.stackly-new-menu-btn span {
+  width: 28px;
+  height: 3px;
+  background: #222;
+  border-radius: 4px;
+}
+
+/* ===========================
+      MOBILE RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+
+  .stackly-new-menu-btn {
+    display: flex;
   }
 
-  .dropdown.open .dropdown-menu {
-    display: block;
+  .stackly-new-menu {
+    position: fixed;
+    top: 75px;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 40px;
+    padding-left: 30px;
+    transition: 0.4s ease-in-out;
   }
 
-  .dropdown-menu li {
-    padding: 10px 0;
+  When menu is opened
+  .stackly-new-menu.active {
+    right: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .stackly-new-menu {
+    width: 100%;
+  }
+}
+
+
+/* ========================================
+   FIX: MOBILE MENU MUST SHOW IN COLUMN
+======================================== */
+
+.stackly-new-menu {
+  display: flex !important;
+  flex-direction: row;
+}
+
+.stackly-new-menu.active {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
 
 </style>
 </head>
 <body>
 
-<header>
-  <nav id="navbar">
-    <div class="logo">
-      <img src="./logo.webp" alt="Stackly Logo">
-    </div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <ul>
-      <ul id="menu">
-        <li class="dropdown">
-          <a href="./hp2.html">Home2 ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="./index.html">Home1</a></li>
-            
-          </ul>
-          
-        <li><a href="buying.html">Buy</a></li>
-        <li><a href="product2.html">product</a></li>
-        <li><a href="aboutus1.html">aboutus</a></li>
-        <li><a href="contact1.html">Contact</a></li>
-        <li><a href="login1.html">Login</a></li>
-        <li><a href="dashbored2.html">Dashboard</a></li>
-    </ul>
-  </nav>
+ <!-- ===========================
+        HEADER + MENU FIXED
+  ============================ -->
+  <header class="stackly-new-header">
+    <nav class="stackly-new-navbar">
+
+        <div class="stackly-new-logo">
+            <img src="./logo.webp" alt="logo">
+        </div>
+
+        <!-- HAMBURGER BUTTON -->
+        <div class="stackly-new-menu-btn" onclick="toggleStacklyMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- NAVIGATION LINKS -->
+        <ul class="stackly-new-menu" id="stacklyNewMenu">
+
+            <li><a href="hp2.html">Home2</a></li>
+            <li><a href="index.html">Home1</a></li>
+            <li><a href="buying.html">Buy</a></li>
+            <li><a href="product2.html">Product</a></li>
+            <li><a href="aboutus1.html">Aboutus</a></li>
+            <li><a href="contact1.html">Contact</a></li>
+            <li><a href="login1.html">Login</a></li>
+            <li><a href="dashbored2.html">Dashboard</a></li>
+
+        </ul>
+
+    </nav>
 </header>
 
 <div class="filter-bar">
@@ -499,12 +553,12 @@ nav a:hover {
 </div>
 
 <script>
-function toggleMenu() {
-  const nav = document.querySelector('nav');
-  const menuBtn = document.querySelector('.menu-btn');
-  nav.classList.toggle('active');
-  menuBtn.classList.toggle('active');
-}
+// function toggleMenu() {
+//   const nav = document.querySelector('nav');
+//   const menuBtn = document.querySelector('.menu-btn');
+//   nav.classList.toggle('active');
+//   menuBtn.classList.toggle('active');
+// }
 
 /* ===== GSAP ANIMATIONS (existing) ===== */
 gsap.registerPlugin(ScrollTrigger);
@@ -624,24 +678,6 @@ function animateRowsOnScroll() {
 
 render();
 
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const dropdowns = document.querySelectorAll('.dropdown');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('open');
-  });
-
-  // Handle dropdown toggle for mobile
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      if (window.innerWidth <= 950) {
-        e.preventDefault();
-        drop.classList.toggle('open');
-      }
-    });
-  });
 
 
 </script>
@@ -695,5 +731,13 @@ render();
           </div>
       
         </footer>
+        <script>
+          
+function toggleStacklyMenu() {
+  document.getElementById("stacklyNewMenu").classList.toggle("active");
+}
+</script>
+
+        
 </body>
 </html>

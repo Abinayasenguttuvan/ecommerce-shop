@@ -377,16 +377,16 @@
   <div class="grid">
     <div class="contact-card">
       <h2>Send Us a Message</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Subject" />
-        <textarea rows="5" placeholder="Write your message..."></textarea>
-        
-        
-           <button class="btn" onclick="window.location.href='./hp2 404.html'">Send Message</button>
-        
-      </form>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="text" id="subject" placeholder="Subject" required />
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+      
+        <button type="submit" class="btn">Send Message</button>
+      </form> 
+
+      
     </div>
 
     <div class="contact-card">
@@ -487,13 +487,9 @@
         </footer>
 <script>
   
-
-  function toggleStacklyMenu() {
-    document.getElementById("stacklyNewMenu").classList.toggle("active");
-}
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Stop auto submit
+  
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();  // Stop default form submit
 
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
@@ -501,11 +497,13 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     let message = document.getElementById("message").value.trim();
 
     if (name === "" || email === "" || subject === "" || message === "") {
-      alert("Please fill all fields!");
+      alert("Please fill the blanks!");
     } else {
-      window.location.href = "./hp2 404.html"; // Redirect to 404 page
+      window.location.href = "./hp2 404.html";  // Redirect when all filled
     }
   });
+</script>
+
 
 </script>
 

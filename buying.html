@@ -360,6 +360,338 @@ header {
 }
 
 
+/* ===============================
+      PRODUCT PAGE LAYOUT
+=============================== */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product-section {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+      MAIN PRODUCT IMAGE
+=============================== */
+
+.product-images {
+  flex: 1;
+  max-width: 450px;
+}
+
+#mainImg {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+/* ===============================
+      IMAGE SLIDER THUMBNAILS
+=============================== */
+
+.image-slider {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.image-slider img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.image-slider img:hover {
+  border-color: #000;
+}
+
+/* ===============================
+      PRODUCT INFO SECTION
+=============================== */
+
+.product-info {
+  flex: 1;
+  padding: 10px;
+}
+
+.product-info h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d40000;
+}
+
+.stock {
+  margin: 10px 0;
+  color: green;
+  font-weight: bold;
+}
+
+.stars span {
+  font-size: 20px;
+  color: gold;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px 5px 0 0;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+/* ===============================
+      REVIEW MODAL
+=============================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ===============================
+     MEDIA QUERY (MOBILE)
+=============================== */
+
+@media (max-width: 768px) {
+  
+  .product-section {
+    flex-direction: column;
+  }
+
+  #mainImg {
+    height: 300px;
+  }
+
+  .image-slider img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .product-info h2 {
+    font-size: 22px;
+  }
+
+  .product-info {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #mainImg {
+    height: 260px;
+  }
+
+  .image-slider img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =============================
+    RELATED PRODUCTS SECTION
+============================= */
+
+.related-products {
+  padding: 20px;
+}
+
+.related-products h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+/* GRID */
+.related-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* EACH CARD SAME SIZE */
+.related-card {
+  width: 200px;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+}
+
+/* MAKE ALL IMAGES SAME SIZE */
+.related-card img {
+  width: 100%;
+  height: 200px;       /* FIXED HEIGHT */
+  object-fit: cover;   /* CROPS PERFECTLY */
+  border-radius: 8px;
+}
+
+.related-card h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.related-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ADD TO CART BUTTON */
+.related-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.related-btn:hover {
+  background: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .related-card {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   FREQUENTLY BOUGHT TOGETHER
+================================*/
+
+.fbt-section {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.fbt-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.fbt-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Layout */
+.fbt-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Image styling */
+.fbt-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.fbt-plus {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* ===============================
+        RESPONSIVE DESIGN
+================================*/
+
+/* Tablets (below 768px) */
+@media (max-width: 768px) {
+  .fbt-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .fbt-plus {
+    font-size: 26px;
+  }
+}
+
+/* Mobile (below 480px) */
+@media (max-width: 480px) {
+  .fbt-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fbt-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .fbt-plus {
+    font-size: 30px;
+  }
+}
+
+
+
 
   </style>
 </head>
@@ -394,7 +726,7 @@ header {
             <li><a href="index.html">Home1</a></li>
             <li><a href="buying.html">Buy</a></li>
             <li><a href="product2.html">Product</a></li>
-            <li><a href="aboutus1.html">Aboutus</a></li>
+            <li><a href="aboutus1.html">About-us</a></li>
             <li><a href="contact1.html">Contact</a></li>
             <li><a href="login1.html">Login</a></li>
             <li><a href="dashbored2.html">Dashboard</a></li>
@@ -413,10 +745,10 @@ header {
         <img id="mainImg" src="./hp2 image1.webp" />
   
         <div class="image-slider">
-          <img onclick="changeImg('img/product1.jpg')" src="./hp2 image2.webp" />
-          <img onclick="changeImg('img/product2.jpg')" src="./hp2 image3.webp" />
-          <img onclick="changeImg('img/product3.jpg')" src="./hp2 image4.webp" />
-          <img onclick="changeImg('img/product4.jpg')" src="./hp2 image5.webp" />
+          <img onclick="changeImg('./hp2 image2.webp')" src="./hp2 image2.webp" />
+          <img onclick="changeImg('./hp2 image3.webp')" src="./hp2 image3.webp" />
+          <img onclick="changeImg('./hp2 image4.webp')" src="./hp2 image4.webp" />
+          <img onclick="changeImg('./hp2 image5.webp')" src="./hp2 image5.webp" />
         </div>
       </div>
   
@@ -433,7 +765,7 @@ header {
         <a href="./hp2 404.html">
   
         <button class="btn" onclick="addToCart()">Add to Cart</button>
-        <button class="btn" onclick="document.getElementById('reviewModal').style.display='flex'">Add Review</button>
+        <button class="btn" >Add Review</button>
         
         <button class="btn" onclick="Buynow()">Buy now</button></a>
       </div>
@@ -480,42 +812,48 @@ header {
   
   
   <!-- Related Products Section -->
-  <section class="related-products" style="padding:20px;">
+  <section class="related-products">
     <h2>Related Products</h2>
-    <div class="related-grid" style="display:flex; gap:20px; flex-wrap:wrap;">
-      <div class="related-card" style="width:200px; background:white; padding:10px; border-radius:10px; box-shadow:0 0 10px #ddd;">
-        <img src="./hp2 image6.webp" style="width:100%; border-radius:8px;">
+  
+    <div class="related-grid">
+  
+      <div class="related-card">
+        <img src="./hp2 image6.webp" alt="product">
         <h4>Stylish Watch</h4>
         <p>₹999</p>
+        <a href="./hp2 404.html"><button class="related-btn">Add to Cart</button></a>
       </div>
-      <div class="related-card" style="width:200px; background:white; padding:10px; border-radius:10px; box-shadow:0 0 10px #ddd;">
-        <img src="./hp2 dress1.webp" style="width:100%; border-radius:8px;">
+  
+      <div class="related-card">
+        <img src="./hp2 dress1.webp" alt="product">
         <h4>Trendy Dress</h4>
         <p>₹1,499</p>
+        <a href="./hp2 404.html"><button class="related-btn">Add to Cart</button></a>
       </div>
-      <div class="related-card" style="width:200px; background:white; padding:10px; border-radius:10px; box-shadow:0 0 10px #ddd;">
-        <img src="./hp2 handbag1.webp" style="width:100%; border-radius:8px;">
+  
+      <div class="related-card">
+        <img src="./hp2 handbag1.webp" alt="product">
         <h4>Handbag</h4>
         <p>₹899</p>
+        <a href="./hp2 404.html"><button class="related-btn">Add to Cart</button></a>
       </div>
+  
     </div>
   </section>
   
   
 
   <!-- Frequently Bought Together -->
-  <section style="padding:20px; background:#fff;">
+  <section class="fbt-section">
     <h2>Frequently Bought Together</h2>
     <p>Buy these products together and get an extra 10% off!</p>
-    <div style="display:flex; gap:20px;">
-      <img src="./hp2 shoe.webp" style="width:120px; border-radius:8px;">
-      <span style="font-size:30px;">+</span>
-      <img src="./hp2 glass.webp" style="width:120px; border-radius:8px;">
-      <span style="font-size:30px;"></span>
-      <!-- <img src="./hp2 bracelet.webp" style="width:120px; border-radius:8px;">
-    </div> -->
-  </section>
   
+    <div class="fbt-box">
+      <img src="./hp2 shoe.webp" class="fbt-img">
+      <span class="fbt-plus">+</span>
+      <img src="./hp2 glass.webp" class="fbt-img">
+    </div>
+  </section>
   
   
   

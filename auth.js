@@ -12,6 +12,15 @@ function togglePassword(id) {
   document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     const signupForm = document.getElementById("signupForm");}
+
+
+    if (loginForm) {
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        window.location.href = "./hp2 404.html";
+
+      });
+    };
   
   //   if (loginForm) {
   //     loginForm.addEventListener("submit", (e) => {

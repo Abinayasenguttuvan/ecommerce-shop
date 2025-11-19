@@ -82,13 +82,11 @@
         </div>
 
         <button type="submit" class="btn new-auth-submit">Login</button>
-<p id="newAuthError" class="new-auth-error"></p>
+        <p id="newAuthError" class="new-auth-error"></p>
 
 
         
-        <!-- <button  type="submit" class="btn" onclick="window.location.href='./404.html'">Login</button> -->
-
-
+        
         <p class="switch-text">Don't have an account? 
           <a href="signup.html">Sign Up</a>
         </p>
@@ -102,7 +100,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
     let email = document.getElementById("email").value.trim();
     let password = document.getElementById("password").value.trim();
-    let errorBox = document.getElementById("newAuthError");
+    // let errorBox = document.getElementById("newAuthError");
 
     if (email === "" || password === "") {
         errorBox.innerText = "⚠️ Please fill all fields";
@@ -110,7 +108,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         return; 
     }
 
-    // if fields filled → redirect
+    if fields filled → redirect
     window.location.href = "./404.html";
 });
 

@@ -11,8 +11,9 @@ function togglePassword(id) {
     if (loginForm) {
       loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Login successful! Redirecting to dashboard...");
-        window.location.href = "dashboard.html";
+        window.location.href = "./hp2 404.html";
+        // alert("Login successful! Redirecting to dashboard...");
+        // window.location.href = "dashboard.html";
       });
     }
   

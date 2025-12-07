@@ -1,0 +1,135 @@
+/* BACKGROUND */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('shopping-bg.jpg') no-repeat center/cover fixed;
+    backdrop-filter: blur(3px);
+  }
+  
+  /* MAIN CONTAINER */
+  .dashboard-container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+  
+  /* HEADER */
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 35px;
+    font-weight: 700;
+  }
+  
+  .dashboard-header p {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  
+  /* STATS GRID */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .stat-card h2 {
+    font-size: 32px;
+    margin: 0;
+    color: #111;
+  }
+  
+  .stat-card p {
+    margin-top: 6px;
+    color: #444;
+  }
+  
+  /* CHARTS GRID */
+  .charts-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  /* CHART BOX */
+  .chart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* ------- BAR CHART -------- */
+  .bar-chart {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+  }
+  
+  .bar {
+    width: 18%;
+    background: #6c63ff;
+    border-radius: 6px 6px 0 0;
+  }
+  
+  /* ------- PIE CHART -------- */
+  .pie-chart-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(
+        #ff4d4d 0deg 120deg,
+        #4d94ff 120deg 240deg,
+        #4dff4d 240deg 360deg
+    );
+    border-radius: 50%;
+  }
+  
+  /* ------- LINE GRAPH -------- */
+  .line-graph svg {
+    width: 100%;
+    height: 160px;
+  }
+  
+  /* RESPONSIVE MEDIA QUERIES */
+  
+  /* TABLET */
+  @media (max-width: 992px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .charts-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .charts-container {
+      grid-template-columns: 1fr;
+    }
+    .dashboard-header h1 {
+      font-size: 26px;
+    }
+  }
+  

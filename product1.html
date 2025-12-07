@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Payment</title>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./product2.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
-        <a href="index.html">   
+        <a href="home2.html">   
             <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
           </a> 
         <!-- div class="logo">Tech<span>Solutions</span></div> -->
@@ -33,12 +31,12 @@
                 </li>
                 
 
-                <li><a href="./shop.html">Shop</a></li>
-                <li><a href="./product.html">Product</a></li>
-                <li><a href="./blog.html">Blogs</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="./buy.html">Buy</a></li>
+                <li><a href="./product1.html">Product</a></li>
+                <li><a href="./about1.html">About</a></li>
+                <li><a href="./contact1.html">Contact</a></li>
+                <li><a href="./dashboard1.html">Dashboard</a></li>
+                <li><a href="./login1.html">Login</a></li>
                 
 
             </ul>
@@ -270,56 +268,70 @@ li a{
 
     </style>
     <body>
-        <section class="dashboard-hero">
-            <h1>E-Commerce Analytics Dashboard</h1>
-            <p>Sales • Traffic • Customer Insights</p>
-          </section>
-          
-          <section class="dashboard-container">
-          
-            <!-- Cards -->
-            <div class="stat-cards">
-              <div class="card">
-                <h3>Total Sales</h3>
-                <p>₹4,50,000</p>
-              </div>
-              <div class="card">
-                <h3>Orders</h3>
-                <p>1,250</p>
-              </div>
-              <div class="card">
-                <h3>New Customers</h3>
-                <p>320</p>
-              </div>
-              <div class="card">
-                <h3>Returning Customers</h3>
-                <p>680</p>
-              </div>
+        
+
+            <section class="product-hero">
+                <h1>Explore Our Latest Products</h1>
+                <p>Quality you love. Prices you enjoy.</p>
+            </section>
+            
+            <!-- PRODUCT GRID -->
+            <div class="product-container">
+            
+                <!-- PRODUCT 1 -->
+                <div class="product-card">
+                    <img src="./jacket2.webp" alt="">
+                    <h3>Classic Denim Jacket</h3>
+                    <p class="price">₹1,499</p>
+                    <button onclick="window.location.href='404.html'">Add to Cart</button>
+                </div>
+            
+                <!-- PRODUCT 2 -->
+                <div class="product-card">
+                    <img src="./shoe11.webp" alt="">
+                    <h3>Premium Leather Shoes</h3>
+                    <p class="price">₹2,199</p>
+                    <button onclick="window.location.href='404.html'">Add to Cart</button>
+                </div>
+            
+                <!-- PRODUCT 3 -->
+                <div class="product-card">
+                    <img src="./hand1.webp" alt="">
+                    <h3>Stylish Handbag</h3>
+                    <p class="price">₹1,299</p>
+                    <button onclick="window.location.href='404.html'">Add to Cart</button>
+                </div>
+            
+                <!-- PRODUCT 4 -->
+                <div class="product-card">
+                    <img src="./watch.webp" alt="">
+                    <h3>Smartwatch Pro</h3>
+                    <p class="price">₹3,499</p>
+                    <button onclick="window.location.href='404.html'">Add to Cart</button>
+                </div>
+            
+                <!-- PRODUCT 5 -->
+                <div class="product-card">
+                    <img src="./hp2 glass.webp" alt="">
+                    <h3>Trendy Sunglasses</h3>
+                    <p class="price">₹799</p>
+                    <button onclick="window.location.href='404.html'">Add to Cart</button>
+                </div>
+            
+                <!-- PRODUCT 6 -->
+                <div class="product-card">
+                    <img src="./sneak.webp" alt="">
+                    <h3>Sports Shoes</h3>
+                    <p class="price">₹1,999</p>
+                    <button onclick="window.location.href='404.html'">Add to Cart</button>
+                </div>
+            
             </div>
-          
-            <!-- Charts -->
-            <div class="charts-grid">
-          
-              <div class="chart-box">
-                <h2>Sales by Category</h2>
-                <canvas id="barChart"></canvas>
-              </div>
-          
-              <div class="chart-box">
-                <h2>Orders Breakdown</h2>
-                <canvas id="pieChart"></canvas>
-              </div>
-          
-              <div class="chart-box">
-                <h2>Monthly Revenue</h2>
-                <canvas id="lineChart"></canvas>
-              </div>
-          
-            </div>
-          
-          </section>
-          
-          <script src="dashboard.js"></script>
+            
+            </body>
+            
+
+        
         <!-- <footer> -->
     <footer class="footer">
         <div class="footer-container">
@@ -343,11 +355,11 @@ li a{
             <div class="footer-box">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="./index.html">Home </a></li>
-                    <li><a href="./shop.html">Shop</a></li>
-                    <li><a href="./product.html">Product</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./home2.html">Home </a></li>
+                    <li><a href="./buy.html">Buy</a></li>
+                    <li><a href="./product1.html">Product</a></li>
+                    <li><a href="./about1.html">About</a></li>
+                    <li><a href="./contact1.html">Contact</a></li>
                 </ul>
             </div>
     

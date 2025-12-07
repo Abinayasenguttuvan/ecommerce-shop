@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Payment</title>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./style1.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+   
+  
     <!-- ================= HEADER ================= -->
     <header class="header">
-        <a href="index.html">   
+        <a href="home2.html">   
             <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
           </a> 
         <!-- div class="logo">Tech<span>Solutions</span></div> -->
@@ -33,12 +33,12 @@
                 </li>
                 
 
-                <li><a href="./shop.html">Shop</a></li>
-                <li><a href="./product.html">Product</a></li>
-                <li><a href="./blog.html">Blogs</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="./buy.html">Buy</a></li>
+                <li><a href="./product1.html">Product</a></li>
+                <li><a href="./about1.html">About</a></li>
+                <li><a href="./contact1.html">Contact</a></li>
+                <li><a href="./dashboard1.html">Dashboard</a></li>
+                <li><a href="./login1.html">Login</a></li>
                 
 
             </ul>
@@ -270,56 +270,51 @@ li a{
 
     </style>
     <body>
-        <section class="dashboard-hero">
-            <h1>E-Commerce Analytics Dashboard</h1>
-            <p>Sales • Traffic • Customer Insights</p>
-          </section>
-          
-          <section class="dashboard-container">
-          
-            <!-- Cards -->
-            <div class="stat-cards">
-              <div class="card">
-                <h3>Total Sales</h3>
-                <p>₹4,50,000</p>
-              </div>
-              <div class="card">
-                <h3>Orders</h3>
-                <p>1,250</p>
-              </div>
-              <div class="card">
-                <h3>New Customers</h3>
-                <p>320</p>
-              </div>
-              <div class="card">
-                <h3>Returning Customers</h3>
-                <p>680</p>
-              </div>
-            </div>
-          
-            <!-- Charts -->
-            <div class="charts-grid">
-          
-              <div class="chart-box">
-                <h2>Sales by Category</h2>
-                <canvas id="barChart"></canvas>
-              </div>
-          
-              <div class="chart-box">
-                <h2>Orders Breakdown</h2>
-                <canvas id="pieChart"></canvas>
-              </div>
-          
-              <div class="chart-box">
-                <h2>Monthly Revenue</h2>
-                <canvas id="lineChart"></canvas>
-              </div>
-          
-            </div>
-          
-          </section>
-          
-          <script src="dashboard.js"></script>
+
+         <!-- HERO -->
+  <div class="hero">
+    <h1>Shop the Best Deals</h1>
+    <p>Exclusive offers on top categories</p>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="./hp2 floral.webp" width="100%">
+      <h3>Product 1</h3><p>$25</p>
+      <button class="add-cart" onclick="window.location.href='./404.html'">Add to Cart</button>
+
+    </div>
+
+    <div class="product-card">
+      <img src="./hp2 dress1.webp" width="100%">
+      <h3>Product 2</h3><p>$40</p>
+      <button class="add-cart" onclick="window.location.href='./404.html'">Add to Cart</button>
+
+    </div>
+
+    <div class="product-card">
+      <img src="./shop dress1.webp" width="100%">
+      <h3>Product 3</h3><p>$15</p>
+      <button class="add-cart" onclick="window.location.href='./404.html'">Add to Cart</button>
+
+    </div>
+
+    <div class="product-card">
+      <img src="./evening dress.webp" width="100%">
+      <h3>Product 4</h3><p>$55</p>
+      <button class="add-cart" onclick="window.location.href='./404.html'">Add to Cart</button>
+
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="reviews">
+    <div class="review active">“Amazing products!” ⭐⭐⭐⭐⭐</div>
+    <div class="review">“Great service!” ⭐⭐⭐⭐</div>
+    <div class="review">“Will buy again!” ⭐⭐⭐⭐⭐</div>
+  </div>
+
         <!-- <footer> -->
     <footer class="footer">
         <div class="footer-container">
@@ -343,11 +338,11 @@ li a{
             <div class="footer-box">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="./index.html">Home </a></li>
-                    <li><a href="./shop.html">Shop</a></li>
-                    <li><a href="./product.html">Product</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./home2.html">Home </a></li>
+                    <li><a href="./buy.html">Buy</a></li>
+                    <li><a href="./product1.html">Product</a></li>
+                    <li><a href="./about1.html">About</a></li>
+                    <li><a href="./contact1.html">Contact</a></li>
                 </ul>
             </div>
     

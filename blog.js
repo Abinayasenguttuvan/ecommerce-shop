@@ -1,19 +1,34 @@
-// Simple comment system
-const commentForm = document.getElementById("commentForm");
-const commentList = document.getElementById("commentList");
 
-commentForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const comment = document.getElementById("comment").value.trim();
+document.getElementById("commentForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent normal form submit
 
-//   if (name && comment) {
-//     const div = document.createElement("div");
-//     div.classList.add("comment");
-//     div.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
-//     commentList.prepend(div);
+    let name = document.getElementById("name").value.trim();
+    let comment = document.getElementById("comment").value.trim();
+    let errorMsg = document.getElementById("errorMsg");
+    let commentList = document.getElementById("commentList");
 
-//     commentForm.reset();
-//   }
-// });
+    // Validation
+    if (name === "" || comment === "") {
+        errorMsg.style.display = "block";
+        return;
+    } else {
+        errorMsg.style.display = "none";
+    }
+
+    // Create comment item
+    let commentItem = document.createElement("div");
+    commentItem.classList.add("comment-item");
+
+    commentItem.innerHTML = `
+        <strong>${name}</strong>
+        <p>${comment}</p>
+    `;
+
+    // Append comment
+    commentList.appendChild(commentItem);
+
+    // Clear fields
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
 

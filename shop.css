@@ -1,163 +1,208 @@
-/* ---------- Shop Page ---------- */
-.shop-hero {
-    background: url('./shop.webp') no-repeat center center/cover;
-    /* color: #fff; */
+/* -------------------------
+   GLOBAL STYLES
+--------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: #0d0d0d;
+    color: #fff;
+  }
+  
+  /* -------------------------
+     HERO SECTION
+  --------------------------*/
+  .shop-hero {
     text-align: center;
-    padding: 160px 20px 100px;
+    padding: 80px 6%;
+    background: url('./yellow11.webp') center/cover no-repeat;
     background-attachment: fixed;
+    position: relative;
+  }
+  
+  .shop-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+  }
+  
+  .shop-hero h2,
+  .shop-hero p {
+    position: relative;
+    z-index: 2;
   }
   
   .shop-hero h2 {
-    font-size: 2.8rem;
-    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
   }
   
   .shop-hero p {
-    font-size: 1.1rem;
-    /* color: #f0f0f0; */
-    margin-top: 10px;
+    margin-top: 8px;
+    font-size: 1.2rem;
+    opacity: 0.85;
   }
   
-  /* Shop Section Layout */
+  /* -------------------------
+     SHOP SECTION LAYOUT
+  --------------------------*/
   .shop-section {
     display: flex;
     gap: 40px;
-    padding: 80px;
-    background: #f9f9f9;
+    padding: 60px 6%;
   }
   
-  /* Sidebar Filters */
+  /* -------------------------
+     SIDEBAR FILTERS
+  --------------------------*/
   .shop-filters {
-    flex: 0 0 250px;
-    background: #fff;
-    border-radius: 12px;
+    width: 260px;
+    background: #1a1a1a;
     padding: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 12px;
     height: fit-content;
+    position: sticky;
+    top: 80px;
   }
   
   .shop-filters h3 {
-    margin-top: 25px;
-    font-size: 1.1rem;
-    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ff66c4;
   }
   
   .shop-filters ul {
     list-style: none;
-    padding-left: 0;
-    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+  
+  .shop-filters li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
   }
   
   .shop-filters label {
-    margin-left: 5px;
-    color: #333;
+    margin-left: 8px;
     cursor: pointer;
   }
   
-  .color-options {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .color-circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .color-circle:hover {
-    transform: scale(1.3);
-  }
-  
-  /* Product Grid */
+  /* -------------------------
+     PRODUCT GRID
+  --------------------------*/
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
     flex: 1;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
   
   .product-card {
-    background: #fff;
+    background: #1a1a1a;
+    padding: 15px;
     border-radius: 12px;
-    overflow: hidden;
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s;
+    border: 1px solid #222;
   }
   
   .product-card:hover {
-    transform: translateY(-8px) rotateY(3deg);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 4px 20px rgba(255,20,147,0.4);
   }
   
   .product-card img {
     width: 100%;
-    height: 250px;
+    height: 260px;
     object-fit: cover;
+    border-radius: 10px;
   }
   
   .product-card h4 {
+    margin-top: 12px;
     font-size: 1.1rem;
-    color: #222;
-    margin: 15px 0 5px;
   }
   
   .product-card p {
-    color: var(--primary-color);
+    margin: 6px 0 12px;
     font-weight: 600;
-    margin-bottom: 10px;
+    color: #ff66c4;
   }
   
   .product-card button {
-    /* background: var(--primary-color); */
-    background:#c6934f;
+    background: linear-gradient(135deg, #ff1493, #7700a8);
     border: none;
-    /* color: #fff; */
-    padding: 10px 20px;
-    border-radius: 25px;
-    margin-bottom: 20px;
+    padding: 10px 16px;
+    color: #fff;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    transition: 0.3s;
   }
   
   .product-card button:hover {
-    background:#ec900f;
-  }
-
-  
-
-  /* ---------- Animation Enhancements ---------- */
-
-/* Fade text animation for hero section */
-.hero-text {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #fff;
-    text-align: center;
-    animation: fadeIn 2s ease;
+    background: #ff1493;
   }
   
-  .fade-text {
-    animation: fadeIn 0.9s ease;
-  }
+  /* -------------------------
+     RESPONSIVE DESIGN
+  --------------------------*/
   
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
+  /* ---------- LARGE TABLET (1024px) ---------- */
+  @media (max-width: 1024px) {
+    .shop-section {
+      gap: 30px;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  
+    .shop-filters {
+      width: 220px;
     }
   }
   
-  /* Smooth fade for product filtering */
-  .product-card {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  /* ---------- TABLET (768px) ---------- */
+  @media (max-width: 768px) {
+    .shop-section {
+      flex-direction: column;
+    }
+  
+    .shop-filters {
+      width: 100%;
+      position: relative;
+      top: 0;
+    }
+  
+    .shop-hero h2 {
+      font-size: 2.4rem;
+    }
+  
+    .shop-hero p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* ---------- MOBILE (480px) ---------- */
+  @media (max-width: 480px) {
+  
+    .shop-hero {
+      padding: 60px 6%;
+      background-attachment: scroll;
+    }
+  
+    .shop-hero h2 {
+      font-size: 1.9rem;
+    }
+  
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .product-card img {
+      height: 220px;
+    }
   }
   

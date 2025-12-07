@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Payment</title>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboard1.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
-        <a href="index.html">   
+        <a href="home2.html">   
             <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
           </a> 
         <!-- div class="logo">Tech<span>Solutions</span></div> -->
@@ -33,12 +31,12 @@
                 </li>
                 
 
-                <li><a href="./shop.html">Shop</a></li>
-                <li><a href="./product.html">Product</a></li>
-                <li><a href="./blog.html">Blogs</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="./buy.html">Buy</a></li>
+                <li><a href="./product1.html">Product</a></li>
+                <li><a href="./about1.html">About</a></li>
+                <li><a href="./contact1.html">Contact</a></li>
+                <li><a href="./dashboard1.html">Dashboard</a></li>
+                <li><a href="./login1.html">Login</a></li>
                 
 
             </ul>
@@ -270,56 +268,80 @@ li a{
 
     </style>
     <body>
-        <section class="dashboard-hero">
-            <h1>E-Commerce Analytics Dashboard</h1>
-            <p>Sales • Traffic • Customer Insights</p>
-          </section>
+
+        <div class="dashboard-container">
+
+            <!-- HEADER SECTION -->
+            <header class="dashboard-header">
+              <h1>E-Commerce Dashboard</h1>
+              <p>Insights of Shopping & Buying Activities</p>
+            </header>
           
-          <section class="dashboard-container">
+            <!-- STATS CARDS -->
+            <div class="stats-grid">
+              <div class="stat-card">
+                <h2>1,245</h2>
+                <p>Total Orders</p>
+              </div>
           
-            <!-- Cards -->
-            <div class="stat-cards">
-              <div class="card">
-                <h3>Total Sales</h3>
-                <p>₹4,50,000</p>
+              <div class="stat-card">
+                <h2>$82,430</h2>
+                <p>Total Revenue</p>
               </div>
-              <div class="card">
-                <h3>Orders</h3>
-                <p>1,250</p>
+          
+              <div class="stat-card">
+                <h2>523</h2>
+                <p>New Customers</p>
               </div>
-              <div class="card">
-                <h3>New Customers</h3>
-                <p>320</p>
-              </div>
-              <div class="card">
-                <h3>Returning Customers</h3>
-                <p>680</p>
+          
+              <div class="stat-card">
+                <h2>98%</h2>
+                <p>Customer Satisfaction</p>
               </div>
             </div>
           
-            <!-- Charts -->
-            <div class="charts-grid">
+            <!-- CHARTS SECTION -->
+            <div class="charts-container">
           
+              <!-- BAR CHART -->
               <div class="chart-box">
-                <h2>Sales by Category</h2>
-                <canvas id="barChart"></canvas>
+                <h3>Monthly Sales (Static Bar Chart)</h3>
+                <div class="bar-chart">
+                  <div class="bar" style="height: 60%"></div>
+                  <div class="bar" style="height: 80%"></div>
+                  <div class="bar" style="height: 40%"></div>
+                  <div class="bar" style="height: 90%"></div>
+                  <div class="bar" style="height: 55%"></div>
+                </div>
               </div>
           
+              <!-- PIE CHART -->
               <div class="chart-box">
-                <h2>Orders Breakdown</h2>
-                <canvas id="pieChart"></canvas>
+                <h3>Product Category Share (Static Pie Chart)</h3>
+          
+                <div class="pie-chart-container">
+                  <div class="pie-chart"></div>
+                </div>
               </div>
           
+              <!-- LINE GRAPH -->
               <div class="chart-box">
-                <h2>Monthly Revenue</h2>
-                <canvas id="lineChart"></canvas>
+                <h3>Visitors Growth (Static Line Graph)</h3>
+                <div class="line-graph">
+                  <svg viewBox="0 0 200 80">
+                    <polyline 
+                      fill="none" 
+                      stroke="black" 
+                      stroke-width="2"
+                      points="0,60 40,50 80,55 120,30 160,35 200,20" />
+                  </svg>
+                </div>
               </div>
           
             </div>
           
-          </section>
+          </div>
           
-          <script src="dashboard.js"></script>
         <!-- <footer> -->
     <footer class="footer">
         <div class="footer-container">
@@ -343,11 +365,11 @@ li a{
             <div class="footer-box">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="./index.html">Home </a></li>
-                    <li><a href="./shop.html">Shop</a></li>
-                    <li><a href="./product.html">Product</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./home2.html">Home </a></li>
+                    <li><a href="./buy.html">Buy</a></li>
+                    <li><a href="./product1.html">Product</a></li>
+                    <li><a href="./about1.html">About</a></li>
+                    <li><a href="./contact1.html">Contact</a></li>
                 </ul>
             </div>
     

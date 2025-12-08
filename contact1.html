@@ -1,777 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact Us | Shoply</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Payment</title>
 
+    <!-- CSS Files -->
+    
+    
+    <link rel="stylesheet" href="contact1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
 <style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f7f7f7;
-  }
-
-  header {
-    width: 100%;
-    background: #d6b77b;
-    color: #fff;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    animation: fadeInDown 0.6s ease;
-  }
-
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px);} 
-    to { opacity: 1; transform: translateY(0);} 
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .logo img {
-    width: 150px;
-  }
-
-  nav ul {
+    /* ================= GLOBAL ================= */
+* {
     margin: 0;
     padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 25px;
-  }
-
-  nav ul li {
-    position: relative;
-  }
-
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s ease;
-  }
-
-  nav a:hover {
-    color: #f3b200;
-  }
-
-  /* Dropdown */
-  ul.dropdown {
-    display: none;
-    position: absolute;
-    top: 35px;
-    background: #333;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  }
-
-  nav ul li:hover .dropdown {
-    display: block;
-    animation: fadeIn 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
-  }
-
-  /* Mobile Menu Button */
-  .menu-btn {
-    display: none;
-    cursor: pointer;
-    color: #fff;
-    font-size: 26px;
-    padding-right: 15px;
-  }
-
-  /* Hero Section */
-  .hero {
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    margin-top: 90px;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('./hp2 contact.webp') center/cover no-repeat;
-    filter: brightness(0.4);
-    transform: scale(1.14);
-    animation: zoomIn 12s ease-in-out infinite alternate;
-  }
-
-  @keyframes zoomIn {
-    0%{transform:scale(1.1)}
-    100%{transform:scale(1.18)}
-  }
-
-  .hero h1 {
-    z-index: 2;
-    font-size: 48px;
-    text-align: center;
-    color: #4dd0e1;
-    animation: fadeUp 1.4s ease-out;
-  }
-
-  @keyframes fadeUp {
-    from{opacity:0;transform:translateY(40px)}
-    to{opacity:1;transform:translateY(0px)}
-  }
-
-  .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 50px 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-
-  .contact-card {
-    background: rgba(255,255,255,0.9);
-    border-radius: 14px;
-    padding: 26px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
-  }
-
-  form input, form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    outline: none;
-    transition: 0.3s box-shadow ease;
-  }
-
-  form input:hover, form textarea:hover {
-    box-shadow: 0 0 12px #4dd0e1;
-  }
-
-  .btn {
-    padding: 12px 22px;
-    background: #4dd0e1;
-    color: #000;
-    border: none;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s, box-shadow 0.3s;
-  }
-
-  .btn:hover {
-    background: #81e9f3;
-    box-shadow: 0 0 14px #4dd0e1;
-  }
-
-  .info-box {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 18px;
-    align-items: flex-start;
-  }
-
-  .icon {
-    width: 52px;
-    height: 52px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    animation: pulse 2.6s infinite;
-  }
-
-  @keyframes pulse {
-    0%{transform:scale(1)}
-    50%{transform:scale(1.14)}
-    100%{transform:scale(1)}
-  }
-
-  iframe {
-    width: 100%;
-    height: 350px;
-    border: 0;
-    border-radius: 12px;
-    margin-top: 30px;
-  }
-
-/* Footer base */
-.footer {
-    background: url('./hp2\ footer.webp') no-repeat center center/cover;
-    /* background: rgb(53, 2, 82); */
-      color: white;
-      padding: 40px 20px 20px;
-      font-family: 'Poppins', sans-serif;
-      position: relative;
-    }
-    
-    /* Footer container layout */
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    
-    /* Footer sections */
-    .footer-section {
-      flex: 1;
-      min-width: 250px;
-    }
-    
-    /* Logo + About section */
-    .footer-logo {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-    .footer h3 {
-      margin-bottom: 10px;
-      color: #00e0b8;
-    }
-    
-    /* Links section */
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-    .footer-section ul li {
-      margin: 8px 0;
-    }
-    .footer-section ul li a {
-      text-decoration: none;
-      color: #ddd;
-      transition: color 0.3s;
-    }
-    .footer-section ul li a:hover {
-      color: #00e0b8;
-    }
-    
-    /* Contact + social */
-    .social-icons img {
-      width: 24px;
-      margin-right: 10px;
-      transition: transform 0.3s;
-    }
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
-
-
-  
-/* Mobile menu toggle button */
-.menu-btn {
-  display: none;
-  cursor: pointer;
-  color: white;
-  font-size: 26px;
-  user-select: none;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 20px 0;
-  }
-  nav.active ul {
-    display: flex;
-  }
-  .menu-btn {
-    display: block;
-  }
-}
-
-
-
-    
-    /* Footer bottom */
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 15px;
-      margin-top: 20px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.8);
-    }
-    
-     
-     /* =============================
-    GLOBAL RESET
-============================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fa;
 }
 
-/* =============================
-    HEADER + NAVBAR
-============================= */
-.stackly-new-header {
-  width: 100%;
-  background: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+a { text-decoration: none; }
 
-.stackly-new-navbar {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.stackly-new-logo img {
-  width: 140px;
-}
-
-/* Hamburger Button */
-.stackly-new-menu-btn {
-  width: 35px;
-  height: 30px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.stackly-new-menu-btn span {
-  height: 4px;
-  background: #000;
-  border-radius: 3px;
-}
-
-/* Desktop Menu */
-.stackly-new-menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.stackly-new-menu li a {
-  text-decoration: none;
-  color: #000;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-/* =============================
-    HERO SECTION
-============================= */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  margin-top: 80px; /* prevents header overlap */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('./shop.webp') no-repeat center center/cover;
-  filter: brightness(0.5);
-}
-
-.hero h1 {
-  position: relative;
-  font-size: 48px;
-}
-
-/* =============================
-    CONTACT GRID
-============================= */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-}
-
-.contact-card {
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.contact-card h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-.btn {
-  width: 100%;
-  padding: 12px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #333;
-}
-
-/* Info Boxes */
-.info-box {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 12px 0;
-  font-size: 16px;
-}
-
-.info-box .icon {
-  font-size: 28px;
-}
-
-/* =============================
-    MAP
-============================= */
-iframe {
-  width: 100%;
-  height: 350px;
-  border: none;
-  margin-top: 20px;
-  border-radius: 10px;
-}
+ul { list-style: none; }
 
 
 
-/* ======================================================
-        RESPONSIVE — TABLET + MOBILE 
-====================================================== */
 
-/* Tablet */
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-
-  /* Header */
-  .stackly-new-menu-btn {
-    display: flex;
-  }
-
-  .stackly-new-menu {
-    position: absolute;
-    top: 70px;
-    left: 0;
+/* ================= HEADER ================= */
+.header {
     width: 100%;
-    background: #fff;
-    flex-direction: column;
-    display: none;
-    padding: 15px 0;
-    text-align: center;
-  }
-
-  .stackly-new-menu li {
-    padding: 12px 0;
-  }
-
-  .stackly-new-menu.show {
+    padding: 18px 40px;
+    background: #0b1f3a;
+    color: #fff;
     display: flex;
-  }
-
-  /* Hero */
-  .hero {
-    height: 200px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  /* Cards */
-  .contact-card {
-    padding: 20px;
-  }
-
-  .info-box {
-    font-size: 15px;
-  }
-
-  iframe {
-    height: 250px;
-  }
+    justify-content: space-between;
+    align-items: center;
 }
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* Dropdown Wrapper */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Desktop Hover */
+@media (min-width: 901px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    background: #12274d;
+    width: 160px;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+    background: #0e1c33;
+}
+
+/* Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+li a{
+    color:white;
+}
+
+
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #0b1f3a;
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* Footer Boxes */
+.footer-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #00e1ff;
+}
+
+.footer-box p, 
+.footer-box a {
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #00e1ff;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    background: #08192e;
+    padding: 15px 0;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    background: #111;
+    color: #00e1ff;
+    border: 1px solid #00e1ff;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background: #00e1ff;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+/* Map */
+.footer-box iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0b1f3a;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .footer-box {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-box {
+        width: 100%;
+    }
+}
+
+
+
+
 
 </style>
-</head>
 <body>
+<!-- ================= HEADER ================= -->
+<header class="header">
 
-  <!-- ===========================
-        HEADER + MENU FIXED
-  ============================ -->
-  <header class="stackly-new-header">
-    <nav class="stackly-new-navbar">
+    <a href="home2.html">
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a>
+      
 
-        <div class="stackly-new-logo">
-            <img src="./logo.webp" alt="logo">
-        </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
 
-        <!-- HAMBURGER BUTTON -->
-        <div class="stackly-new-menu-btn" onclick="toggleStacklyMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+            
+                <ul class="dropdown-content">
+                    <li><a href="./index.html">Home 1</a></li>
+                    <li><a href="./home2.html">Home 2</a></li>
+                </ul>
+            </li>
 
-        <!-- NAVIGATION LINKS -->
-        <ul class="stackly-new-menu" id="stacklyNewMenu">
+           
+            <li><a href="./buy.html">Buy</a></li>
+            <li><a href="./product1.html">Product</a></li>
+            <li><a href="./about1.html">About</a></li>
+            <li><a href="./contact1.html">Contact</a></li>
+            <li><a href="./dashboard1.html">Dashboard</a></li>
+            <li><a href="./login1.html">Login</a></li>
+            
 
-            <li><a href="hp2.html">Home2</a></li>
-            <li><a href="index.html">Home1</a></li>
-            <li><a href="buying.html">Buy</a></li>
-            <li><a href="product2.html">Product</a></li>
-            <li><a href="aboutus1.html">About us</a></li>
-            <li><a href="contact1.html">Contact</a></li>
-            <li><a href="login1.html">Login</a></li>
-            <li><a href="dashbored2.html">Dashboard</a></li>
 
         </ul>
-
     </nav>
+
+
+    
+
+    <!-- Toggle -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
 </header>
-<section class="hero">
-  <div class="hero-bg"></div>
-  <h1>Contact Us</h1>
+
+
+
+    
+
+    <!-- ================= CONTACT HERO ================= -->
+<section class="contact-hero">
+    <div class="contact-hero-overlay">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you. Get in touch with our IT experts.</p>
+    </div>
 </section>
 
-<div class="container">
-  <div class="grid">
-    <div class="contact-card">
-      <h2>Send Us a Message</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <input type="text" id="subject" placeholder="Subject" required />
-        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
-      
-        <button type="submit" class="btn">Send Message</button>
-      </form> 
+<!-- ================= CONTACT CONTAINER ================= -->
+<section class="contact-container">
+    <div class="contact-form-box">
+        <h2>Get In Touch</h2>
 
-      
+        <form id="contactForm">
+            <div class="input-box">
+                <input type="text" id="name" placeholder="Your Name">
+            </div>
+
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Your Email">
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="subject" placeholder="Subject">
+            </div>
+
+            <div class="input-box">
+                <textarea id="message" placeholder="Your Message"></textarea>
+            </div>
+
+            <button type="submit" class="contact-btn">Send Message</button>
+
+            <p id="error-msg" class="error-msg"></p>
+        </form>
     </div>
 
-    <div class="contact-card">
-      <h2>Reach Us</h2>
-
-      <div class="info-box">
-        <div class="icon">📞</div>
-        <div>
-          <strong>Phone</strong><br />
-          +91 70107 92745
-        </div>
-      </div>
-
-      <div class="info-box">
-        <div class="icon">📧</div>
-        <div>
-          <strong>Email</strong><br />
-          info@thestackly.com
-        </div>
-      </div>
-
-      <div class="info-box">
-        <div class="icon">📍</div>
-        <div>
-          <strong>Location</strong><br />
-          MMR Complex, Salem, Tamil Nadu 636008
-        </div>
-      </div>
-
-      <div class="info-box">
-        <div class="icon">⏰</div>
-        <div>
-          <strong>Working Hours</strong><br />
-          Mon - Sat: 9am - 7pm
-        </div>
-      </div>
+    <div class="contact-map">
+        <iframe 
+            src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
     </div>
-  </div>
-</div>
-
-<iframe
-  src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-  allowfullscreen=""
-  loading="lazy">
-</iframe>
+</section>
 
 
-<footer class="footer">
-  <div class="footer-container">
 
-    <!-- Column 1: Logo and About -->
-    <div class="footer-section about">
-      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo" >
-    </div>
-
+<!-- <footer> -->
+    <footer class="footer">
+        <div class="footer-container">
     
-
-    <!-- Column 2: Quick Links -->
-    <div class="footer-section links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="hp2.html">Home</a></li>
-        <li><a href="product2.html">product </a></li>
-        <li><a href="aboutus1.html">about</a></li>
-        <li><a href="buying.html">Buy</a></li>
-        
-        <li><a href="contact1.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3: Contact -->
-    <div class="footer-section contact">
-      <h4>Get in Touch</h4>
-      
-      <p> MMR complex,salem,Tamil nadu 636008</p>
-      <p>Email: <a href="mailto:support@stackly.com">info@thestackly.com</a></p>
-      <p>Phone: +91 70107 92745</p>
-
-      <div class="social-icons">
-        <a href="404.html"><i class="fab fa-facebook-f"></i></a>
-        <a href="404.html"><i class="fab fa-twitter"></i></a>
-        <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
-        <a href="404.html"><i class="fab fa-instagram"></i></a>
-      </div>
-  
+            <!-- Logo / About -->
+            <div class="footer-box">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
    
-      <iframe
-      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-      width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-
+               
+                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
     
-          </div>
-          <div class="copyright">
-            <p>© 2025 Stackly | All Rights Reserved</p>
-          </div>
-      
-        </footer>
-<script>
-  
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./home2.html">Home </a></li>
+                    <li><a href="./buy.html">Buy</a></li>
+                    <li><a href="./product1.html">Product</a></li>
+                    <li><a href="./about1.html">About</a></li>
+                    <li><a href="./contact1.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Address -->
+            <div class="footer-box">
+                <h3>Our Address</h3>
+                <p>
+                    MMR complex.<br>
+                    chinna tirupathi kovil street,<br>
+                    salem,Tamil nadu-636008<br>
+                    <!-- Bengaluru, Karnataka – 560066<br> -->
+                    India<br><br>
+    
+                    <strong>Phone:</strong> +91 98765 43210<br>
+                    <strong>Email:</strong> support@thestackly.com
+                </p>
+            </div>
+    
+            <!-- Google Map -->
+            <div class="footer-box">
+                <h3>Location</h3>
+                <iframe 
+                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 stackly | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <!-- Script -->
+    <script src="responsive.js"></script>
+    <script src="contact1.js"></script>
+    
 
-  function toggleStacklyMenu() {
-    document.getElementById("stacklyNewMenu").classList.toggle("active");
-}
 
+
+
+
+    <!-- Script -->
+   
+    <script>
+        // CONTACT FORM VALIDATION + 404 REDIRECT
 document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Stop auto submit
+    e.preventDefault();
 
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let subject = document.getElementById("subject").value.trim();
     let message = document.getElementById("message").value.trim();
 
-    if (name === "" || email === "" || subject === "" || message === "") {
-      alert("Please fill all fields!");
-    } else {
-      window.location.href = "./hp2 404.html"; // Redirect to 404 page
-    }
-  });
-
-  
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();  // Stop default form submit
-
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let subject = document.getElementById("subject").value.trim();
-    let message = document.getElementById("message").value.trim();
+    let errorMsg = document.getElementById("error-msg");
 
     if (name === "" || email === "" || subject === "" || message === "") {
-      alert("Please fill the blanks!");
-    } else {
-      window.location.href = "./hp2 404.html";  // Redirect when all filled
+        errorMsg.innerText = "Please fill all details.";
+        return;
     }
-  });
 
-  
-function toggleStacklyMenu() {
-  document.getElementById("stacklyNewMenu").classList.toggle("show");
-}
-</script>
+    // Redirect to your 404 page
+    window.location.href = "404.html";
+});
+
+// TOGGLE MENU
+const toggleBtn = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggleBtn.addEventListener("click", () => {
+    if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+    } else {
+        navLinks.style.display = "flex";
+    }
+});
+
+// MOBILE DROPDOWN CLICK
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownMenu = document.querySelector(".dropdown-content");
+
+dropdownBtn.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === "block" ? "none" : "block";
+});
 
 
 
+
+
+    </script>
+    
 
 </body>
 </html>
+
+
+

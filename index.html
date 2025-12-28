@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Payment</title>
+    <title>Ecommerce - shopfy</title>
     <!-- CSS Files -->
     <link rel="stylesheet" href="./style.css">
     
@@ -72,7 +72,7 @@ ul { list-style: none; }
 .header {
     width: 100%;
     padding: 18px 40px;
-    background: #0b1f3a;
+    background: #267992;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -150,7 +150,7 @@ li a{
 
 /* ================= FOOTER ================= */
 .footer {
-    background: #0b1f3a;
+    background: #267992;
     padding-top: 40px;
     color: white;
 }
@@ -196,7 +196,7 @@ li a{
 
 .footer-bottom {
     text-align: center;
-    background: #08192e;
+    background:#267992;
     padding: 15px 0;
 }
 
@@ -268,136 +268,387 @@ li a{
 
     </style>
     <body>
-<section class="parallax reveal" >
-    <div class="parallax-content">
-      <h2 class="hero-animated-line">
-        <span>Shopfy</span> 
-        
-       
-      </h2><br><br>
-  
-      <!-- <p class="reveal" style="margin-top: 20px; font-size: 1rem; color: #ddd;">
-        Discover the finest in contemporary fashion <br>
-        Explore timeless silhouettes, seasonal collections,<br> and runway-inspired designs.. </p>
-   -->
-      <div class="hero-text-scroll">
-        <span>Luxury • Couture • Runway • Style • Elegance • Fashion • Confidence • </span>
-      </div>
-    </div>
-  </section>
-  
+      <!-- HERO SECTION -->
+<section class="hero">
+  <!-- <div class="hero-overlay"></div> -->
 
-<section class="container fade-in">
-  <h2 class="section-title">New Season Highlights</h2><br>
-  <div class="cards">
-    <div class="card">
-      <img src="./winter1.webp" alt="Winter Collection">
-      <div class="card-body">
-        <h3>Winter Luxe Collection</h3>
-        <p>Embrace warm sophistication in cashmere, leather, and signature monochromes.</p>
-      </div>
-    </div>
+  <div class="hero-slider">
+    <img src="./shop dress1.webp" class="hero-img active" alt="Fashion 1">
+    <img src="./thum1.webp" class="hero-img" alt="Fashion 2">
+    <img src="./thum2.webp" class="hero-img" alt="Fashion 3">
+  </div>
 
-    <div class="card">
-      <img src="./blazers.webp" alt="Runway Edit">
-      <div class="card-body">
-        <h3>Runway Edit 2025</h3>
-        <p>Featuring structured blazers and fluid gowns — the new definition of chic.</p>
-      </div>
-    </div>
+  <div class="hero-content">
+    <h1>
+      Shop Smart.<br>
+      <span class="highlight">Shop Blue.</span>
+    </h1>
 
-    <div class="card">
-      <img src="./urban.webp" alt="Urban Couture">
-      <div class="card-body">
-        <h3>Urban Couture</h3>
-        <p>Effortless day-to-night looks that blend comfort with captivating elegance.</p>
-      </div>
+    <p id="hero-text">
+      Elevate your everyday style with premium blue-tone essentials.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#" class="btn primary">Shop Now</a>
+      <a href="#" class="btn secondary">Explore Collections</a>
     </div>
   </div>
 </section>
 
-<section class="runway-section fade-in">
-  <h2 class="section-title">Runway Highlights</h2>
-  <div class="runway-track">
-    <div class="runway-item"><img src="./d11.webp" alt="run1"></div>
-    <div class="runway-item"><img src="./d2.webp" alt="run2"></div>
-    <div class="runway-item"><img src="./run3.webp" alt="run3"></div>
-    <div class="runway-item"><img src="./elegant.webp" alt="run4"></div>
-    <div class="runway-item"><img src="./d12.webp" alt="run5"></div>
+
+
+<!-- BRAND SCROLL SECTION -->
+<section class="brand-section">
+  <h2 class="brand-title">Trusted by Leading Brands</h2>
+
+  <div class="brand-slider">
+    <div class="brand-track">
+
+      <!-- BRAND LOGOS -->
+      <div class="brand"><img src="./woodland.webp" alt="Brand"></div>
+      <div class="brand"><img src="./gucci.webp" alt="Brand"></div>
+      <div class="brand"><img src="./bata.webp" alt="Brand"></div>
+      <div class="brand"><img src="./louis.webp" alt="Brand"></div>
+      
+
+      <!-- DUPLICATE FOR LOOP -->
+      <div class="brand"><img src="./woodland.webp" alt="Brand"></div>
+      <div class="brand"><img src="./gucci.webp" alt="Brand"></div>
+      <div class="brand"><img src="./bata.webp" alt="Brand"></div>
+      <div class="brand"><img src="./louis.webp" alt="Brand"></div>
+      
+    </div>
   </div>
 </section>
 
-<section class="best-sellers">
-  <h2>Best Sellers</h2>
-  <p class="section-tagline">Our most loved collections — luxury and lifestyle, curated for you.</p>
 
-  <div class="category-container">
 
-    <!-- Dresses -->
-    <div class="category-card">
-      <div class="card-inner">
-        <div class="card-front" style="background-image: url('dress.webp');">
-          <h3>Dresses</h3>
-        </div>
-        <div class="card-back">
-          <h3>Best Sellers of Dresses</h3>
-          <p>Explore the most trending fashion wear and elegant gowns for all occasions.</p>
-          <a href="shop.html" class="btn">Shop Now</a>
-        </div>
-      </div>
-    </div>
+<section class="gender-section">
+  <div class="gender-container">
 
-    <!-- Kitchen -->
-    <div class="category-card">
-      <div class="card-inner">
-        <div class="card-front" style="background-image: url('./kitchen.webp');">
-          <h3>Kitchen</h3>
-        </div>
-        <div class="card-back">
-          <h3>Best Sellers of Kitchen Items</h3>
-          <p>Stylish cookware and premium utensils to elevate your modern home.</p>
-          <a href="shop.html" class="btn">Shop Now</a>
-        </div>
-      </div>
-    </div>
+    <!-- LEFT PRODUCTS -->
+    <div class="products-area" id="productsArea"></div>
 
-    <!-- Cosmetics -->
-    <div class="category-card">
-      <div class="card-inner">
-        <div class="card-front" style="background-image: url('./makeup.webp');">
-          <h3>Cosmetics</h3>
-        </div>
-        <div class="card-back">
-          <h3>Best Sellers of Cosmetics</h3>
-          <p>Luxury skincare and beauty essentials — where elegance meets confidence.</p>
-          <a href="shop.html" class="btn">Shop Now</a>
-        </div>
-      </div>
-    </div>
+    <!-- RIGHT MODEL + TOGGLE -->
+    <div class="model-area">
+      <img src="./men.webp" id="modelImage" class="model-img">
+      
 
-    <!-- Electronics -->
-    <div class="category-card">
-      <div class="card-inner">
-        <div class="card-front" style="background-image: url('./electronics.webp');">
-          <h3>Electronics</h3>
-        </div>
-        <div class="card-back">
-          <h3>Best Sellers of Electronics</h3>
-          <p>Smart gadgets and lifestyle tech essentials designed for modern living.</p>
-          <a href="shop.html" class="btn">Shop Now</a>
-        </div>
+      <div class="toggle-buttons">
+        <button class="toggle-btn active" id="menBtn">MEN</button>
+        <button class="toggle-btn" id="womenBtn">WOMEN</button>
       </div>
     </div>
 
   </div>
 </section>
 
+<section class="shop-section">
 
-<div class="announcement-bar">
-    <div class="announcement-text">
-      ✨ 10 Days Easy Return · Free Shipping (Nov–Dec) · Year-End Offer! ✨
+  <h2 class="shop-title">Our Collections</h2>
+
+  <!-- TABS -->
+  <div class="shop-tabs">
+    <button class="tab active glitch" onclick="showProducts('latest')">LATEST</button>
+    <button class="tab glitch" onclick="showProducts('featured')">FEATURED</button>
+    <button class="tab glitch" onclick="showProducts('best')">BEST SELLERS</button>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products-wrapper">
+
+    <!-- LATEST -->
+    <div class="product-group active" id="latest">
+      <div class="shop-card">
+        <img src="./d11.webp">
+        <div class="card-overlay">
+          <h3>Smart Jacket</h3>
+          <p>₹2,499</p>
+          <a href="404.html">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="sneak.webp">
+        <div class="card-overlay">
+          <h3>Blue Sneakers</h3>
+          <p>₹3,199</p>
+          <a href="404.html">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED -->
+    <div class="product-group" id="featured">
+      <div class="shop-card">
+        <img src="watch.webp">
+        <div class="card-overlay">
+          <h3>Luxury Watch</h3>
+          <p>₹6,999</p>
+          <a href="404.html">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="hand1.webp">
+        <div class="card-overlay">
+          <h3>Designer Bag</h3>
+          <p>₹4,499</p>
+          <a href="404.html">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEST SELLERS -->
+    <div class="product-group" id="best">
+      <div class="shop-card">
+        <img src="shoe121.webp">
+        <div class="card-overlay">
+          <h3>Casual Shoes</h3>
+          <p>₹2,899</p>
+          <a href="404.html">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="jacket1.webp">
+        <div class="card-overlay">
+          <h3>Premium Hoodie</h3>
+          <p>₹1,999</p>
+          <a href="404.html">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="testimonial-section">
+
+  <div class="testimonial-overlay"></div>
+
+  <h2 class="testimonial-title">What Our Customers Say</h2>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+
+      <!-- CARD 1 -->
+      <div class="testimonial-card">
+        <p>
+          “The quality is amazing and delivery was super fast.
+          I loved the shopping experience!”
+        </p>
+        <h4>— Sarah Williams</h4>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="testimonial-card">
+        <p>
+          “Trendy collections and very affordable pricing.
+          Definitely coming back again.”
+        </p>
+        <h4>— Arjun Mehta</h4>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="testimonial-card">
+        <p>
+          “Customer support is excellent and the products
+          look exactly like the images.”
+        </p>
+        <h4>— Emma Brown</h4>
+      </div>
+
+      <!-- DUPLICATE FOR LOOP -->
+      <div class="testimonial-card">
+        <p>
+          “The quality is amazing and delivery was super fast.
+          I loved the shopping experience!”
+        </p>
+        <h4>— Sarah Williams</h4>
+      </div>
+
     </div>
   </div>
+
+</section>
+
+
+<section class="features-section">
+
+  <h2 class="features-title">Why Shop With Us</h2>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">🚚</div>
+      <h3>Free Shipping</h3>
+      <p>Enjoy free delivery on all orders with no minimum purchase.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🕒</div>
+      <h3>24/7 Support</h3>
+      <p>Our support team is always available to help you anytime.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🤝</div>
+      <h3>Trusted Partners</h3>
+      <p>We collaborate with top brands and verified suppliers.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3>Big Savings</h3>
+      <p>Exclusive discounts and offers on premium collections.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="seasonal-section">
+
+  <h2 class="seasonal-title">Seasonal & Trendy Collection</h2>
+  <p class="seasonal-subtitle">Discover the most stylish picks of the season</p>
+
+  <div class="seasonal-slider">
+    <div class="seasonal-track">
+
+      <!-- CARD 1 -->
+      <div class="seasonal-card">
+        <img src="./shirt11.webp" alt="Summer Shirt">
+        <h3>Summer Shirt</h3>
+        <p>Lightweight & breathable</p>
+        <span class="price">$49</span>
+      </div>
+
+      <!-- CARD 2 -->
+      <!-- <div class="seasonal-card">
+        <img src="./shoe121.webp" alt="Shoes">
+        <h3>Trendy Shoes</h3>
+        <p>Comfort meets style</p>
+        <span class="price">$79</span>
+      </div> -->
+
+      <!-- CARD 3 -->
+      <div class="seasonal-card">
+        <img src="hp2 dress1.webp" alt="Dress">
+        <h3>Floral Dress</h3>
+        <p>Elegant & modern</p>
+        <span class="price">$89</span>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="seasonal-card">
+        <img src="./hand2.webp" alt="Handbag">
+        <h3>Designer Handbag</h3>
+        <p>Luxury finish</p>
+        <span class="price">$99</span>
+      </div>
+
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
+      <div class="seasonal-card">
+        <img src="shirt11.webp">
+        <h3>Summer Shirt</h3>
+        <p>Lightweight & breathable</p>
+        <span class="price">$49</span>
+      </div>
+
+      <!-- <div class="seasonal-card">
+        <img src="./shoe11.webp">
+        <h3>Trendy Shoes</h3>
+        <p>Comfort meets style</p>
+        <span class="price">$79</span>
+      </div> -->
+
+    </div>
+  </div>
+
+</section>
+
+<section class="gallery-shop">
+
+  <h2 class="gallery-title">Gallery Shop</h2>
+  <p class="gallery-subtitle">Explore our curated fashion collections</p>
+
+  <div class="gallery-grid">
+
+    <!-- CARD 1 -->
+    <div class="gallery-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./jacket1.webp" alt="Men Jacket">
+          <h3>Men Jacket</h3>
+        </div>
+        <div class="card-back">
+          <p>Premium winter jacket</p>
+          <span>$129</span>
+          <button onclick="window.location.href='404.html'">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="gallery-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="dress.webp" alt="Women Dress">
+          <h3>Women Dress</h3>
+        </div>
+        <div class="card-back">
+          <p>Elegant evening wear</p>
+          <span>$149</span>
+          <button onclick="window.location.href='404.html'">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="gallery-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="shoe121.webp" alt="Shoes">
+          <h3>Stylish Shoes</h3>
+        </div>
+        <div class="card-back">
+          <p>Comfort & durability</p>
+          <span>$99</span>
+          <button onclick="window.location.href='404.html'">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="gallery-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="./hand5.webp" alt="Handbag">
+          <h3>Handbag</h3>
+        </div>
+        <div class="card-back">
+          <p>Luxury leather bag</p>
+          <span>$179</span>
+          <button onclick="window.location.href='404.html'">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
 
   <!-- <footer> -->
     <footer class="footer">
@@ -490,7 +741,7 @@ dropdownBtn.addEventListener("click", (e) => {
     </script>
 
 
-    
+<script src="script.js"></script>
 
 </body>
 </html>

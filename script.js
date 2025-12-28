@@ -1,62 +1,120 @@
-// ===== Scroll Animation Trigger =====
-const faders = document.querySelectorAll('.fade-in');
 
-window.addEventListener('scroll', () => {
-  const triggerBottom = window.innerHeight * 0.85;
-  faders.forEach(fader => {
-    const boxTop = fader.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      fader.classList.add('show');
-    }
-  });
-});
+const images = document.querySelectorAll(".hero-img");
+const text = document.getElementById("hero-text");
 
-// ===== Auto-scroll Runway =====
-const runway = document.querySelector('.runway-track');
-if (runway) {
-  setInterval(() => {
-    runway.scrollBy({ left: 300, behavior: 'smooth' });
-    if (runway.scrollLeft + runway.clientWidth >= runway.scrollWidth) {
-      runway.scrollTo({ left: 0, behavior: 'smooth' });
-    }
-  }, 3000);
+const captions = [
+  "Elevate your everyday style with premium blue-tone essentials.",
+  "Modern silhouettes designed for confident urban fashion.",
+  "Lifestyle collections crafted for comfort and elegance."
+];
+
+let index = 0;
+
+function changeSlide() {
+  images.forEach(img => img.classList.remove("active"));
+  images[index].classList.add("active");
+  text.textContent = captions[index];
+
+  index = (index + 1) % images.length;
 }
 
-// ===== Dashboard Chart =====
-if (document.getElementById('salesChart')) {
-  const ctx = document.getElementById('salesChart');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-      datasets: [{
-        label: 'Sales',
-        data: [1200, 1900, 3000, 2500, 3200, 4000],
-      }]
-    },
-    options: {
-      scales: { y: { beginAtZero: true } }
-    }
+setInterval(changeSlide, 4000);
+
+
+
+function showMen() {
+  document.getElementById("modelImage").src = "men-model.webp";
+  setActive(0);
+}
+
+function showWomen() {
+  document.getElementById("modelImage").src = "women-model.webp";
+  setActive(1);
+}
+
+function setActive(index) {
+  const buttons = document.querySelectorAll(".toggle-btn");
+  buttons.forEach(btn => btn.classList.remove("active"));
+  buttons[index].classList.add("active");
+}
+
+
+
+function showProducts(type) {
+  document.querySelectorAll('.product-group').forEach(group => {
+    group.classList.remove('active');
+  });
+
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  document.getElementById(type).classList.add('active');
+  event.target.classList.add('active');
+}
+
+
+
+
+const productsArea = document.getElementById("productsArea");
+const modelImage = document.getElementById("modelImage");
+const menBtn = document.getElementById("menBtn");
+const womenBtn = document.getElementById("womenBtn");
+
+/* DATA */
+const menProducts = [
+  { img: "men glass.webp", title: "Stylish Glasses", text: "Premium UV protected eyewear." },
+  { img: "shirt11.webp", title: "Casual Shirt", text: "Comfortable breathable fabric." },
+  { img: "shoe11.webp", title: "Running Shoes", text: "Lightweight high performance." },
+  { img: "watch11.webp", title: "Smart Watch", text: "Fitness & notification tracking." }
+];
+
+const womenProducts = [
+  { img: "dress.webp", title: "Designer Dress", text: "Elegant modern styling." },
+  { img: "watch.webp", title: "Watch", text: "Stylish sun protection." },
+  { img: "sneak.webp", title: "Heels", text: "Comfort meets elegance." },
+  { img: "thum1.webp", title: "Handbag", text: "Premium leather finish." }
+];
+
+/* RENDER FUNCTION */
+function renderProducts(data) {
+  productsArea.innerHTML = "";
+  data.forEach(item => {
+    productsArea.innerHTML += `
+      <div class="info-card">
+        <div class="card-cover">
+          <img src="${item.img}">
+          <img src="${item.img}">
+          <img src="${item.img}">
+          <img src="${item.img}">
+        </div>
+        <div class="card-content">
+          <h4>${item.title}</h4>
+          <p>${item.text}</p>
+        </div>
+      </div>
+    `;
   });
 }
 
-// ---------- Parallax Scroll ----------
-window.addEventListener("scroll", function() {
-    const parallax = document.querySelector(".parallax");
-    let scrollPosition = window.pageYOffset;
-    if (parallax) {
-      parallax.style.backgroundPositionY = scrollPosition * 0.5 + "px";
-    }
-  });
+/* TOGGLE */
+menBtn.onclick = () => {
+  renderProducts(menProducts);
+  modelImage.src = "men.webp";
+  menBtn.classList.add("active");
+  womenBtn.classList.remove("active");
+};
 
-  
-  // ---------- Fade Navbar on Scroll ----------
-window.addEventListener("scroll", function() {
-    const header = document.querySelector("header");
-    if (window.scrollY > 100) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
-  
+womenBtn.onclick = () => {
+  renderProducts(womenProducts);
+  modelImage.src = "d1.webp";
+  womenBtn.classList.add("active");
+  menBtn.classList.remove("active");
+};
+
+/* DEFAULT */
+renderProducts(menProducts);
+
+
+
+

@@ -263,13 +263,157 @@ li a{
         width: 100%;
     }
 }
+
+/* SECTION */
+.features-section {
+  padding: 80px 6%;
+  /* background: #0b0f1a; */
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+/* GLITCH HEADING */
+.glitch {
+  position: relative;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.glitch::before {
+  color: #00eaff;
+  animation: glitchTop 2s infinite linear;
+}
+
+.glitch::after {
+  color: #ff0055;
+  animation: glitchBottom 1.8s infinite linear;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); }
+  50% { clip-path: inset(20% 0 40% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); }
+  50% { clip-path: inset(40% 0 20% 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+
+/* WRAPPER */
+.features-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* LEFT CONTENT */
+.features-content h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.features-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: black;
+}
+
+.features-content ul {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.features-content li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* FEATURES GRID */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.feature-card {
+  /* background: #111827; */
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* SAME SIZE IMAGES */
+.feature-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.feature-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .features-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .glitch {
+    font-size: 2.2rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .features-content h3 {
+    font-size: 1.6rem;
+  }
+}
+
    </style>
     <body>
 
         <section class="hero">
             <div class="hero-left">
               <h1 id="heroTitle">Buy & Sell Anything Instantly</h1>
-              <p id="heroText">Resell products, earn profits & shop smart.</p>
+              <p id="heroText">Resell products, earn profits & shop smart and earn as ur wish at anytime and anywhere</p>
           
               <div class="glitch-btn">
                 <a href="./404.html">
@@ -293,20 +437,51 @@ li a{
           </div>
 
 
-          <section class="features">
-            <div class="feature-card">
-              <img src="./blue12.webp">
-              <h3>List in 30 Seconds</h3>
-            </div>
-            <div class="feature-card">
-              <img src="./doorstep.webp">
-              <h3>Doorstep Delivery</h3>
-            </div>
-            <div class="feature-card">
-              <img src="./safe and free.webp">
-              <h3>Easy & Safe Payments</h3>
+          <section class="features-section">
+
+            <!-- GLITCH HEADING -->
+            <h2 class="glitch" data-text="Why Choose Our Platform">
+              Why Choose Our Platform
+            </h2>
+          
+            <div class="features-wrapper">
+          
+              <!-- LEFT CONTENT -->
+              <div class="features-content">
+                <h3>Simple. Secure. Super Fast.</h3>
+                <p>
+                  Our platform helps you list products instantly, ensures safe
+                  payments, and delivers items directly to your doorstep with
+                  complete transparency.
+                </p>
+                <ul>
+                  <li>⚡ Quick onboarding</li>
+                  <li>🔐 Secure transactions</li>
+                  <li>🚚 Hassle-free delivery</li>
+                </ul>
+              </div>
+          
+              <!-- RIGHT FEATURES -->
+              <div class="features">
+                <div class="feature-card">
+                  <img src="./blue12.webp" alt="List fast">
+                  <h4>List in 30 Seconds</h4>
+                </div>
+          
+                <div class="feature-card">
+                  <img src="./doorstep.webp" alt="Delivery">
+                  <h4>Doorstep Delivery</h4>
+                </div>
+          
+                <div class="feature-card">
+                  <img src="./safe and free.webp" alt="Payments">
+                  <h4>Easy & Safe Payments</h4>
+                </div>
+              </div>
+          
             </div>
           </section>
+          
 
           <section class="buy-section">
             <h2 class="buy-heading">

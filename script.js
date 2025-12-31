@@ -63,7 +63,7 @@ const womenBtn = document.getElementById("womenBtn");
 
 /* DATA */
 const menProducts = [
-  { img: "men glass.webp", title: "Stylish Glasses", text: "Premium UV protected eyewear." },
+  { img: "mens glass.webp", title: "Stylish Glasses", text: "Premium UV protected eyewear." },
   { img: "shirt11.webp", title: "Casual Shirt", text: "Comfortable breathable fabric." },
   { img: "shoe11.webp", title: "Running Shoes", text: "Lightweight high performance." },
   { img: "watch11.webp", title: "Smart Watch", text: "Fitness & notification tracking." }

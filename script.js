@@ -22,6 +22,10 @@ setInterval(changeSlide, 4000);
 
 
 
+
+
+
+
 function showMen() {
   document.getElementById("modelImage").src = "men-model.webp";
   setActive(0);
